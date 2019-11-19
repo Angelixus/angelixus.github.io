@@ -33,7 +33,7 @@ class Head {
   }
 
   getDegreeName() {
-    name = this.university.getDegreeName();
+    name = this.student.getFirstSubject().getDegreeName();
     this.history[name] = true;
     return name;
   }
