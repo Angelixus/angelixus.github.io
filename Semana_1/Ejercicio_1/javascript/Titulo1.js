@@ -5,13 +5,13 @@ class HTMLWriter {
     }
 
     writeToHTML() {
-        document.getElementById(this.tagId).innerHTML = this.toWrite;
+        document.getElementById(this.tagId).textContent += this.toWrite;
     }
 }
 
 head = instantiateHead();
 
-subjectName = head.getStudent().getFirstSubject().getSubjectName();
+subjectName = head.getSubjectName();
 tagId = "h1Body";
 
 htmlWriter = new HTMLWriter(tagId, subjectName);
