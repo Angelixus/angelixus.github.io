@@ -5,6 +5,7 @@ class HTMLWriter {
     }
 
     writeToHTML() {
+        console.log(this.tagId);
         document.getElementById(this.tagId).textContent += this.toWrite;
     }
 }
