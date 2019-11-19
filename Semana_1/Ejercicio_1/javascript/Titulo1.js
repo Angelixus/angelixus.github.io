@@ -6,7 +6,18 @@ class HTMLWriter {
 
     writeToHTML() {
         console.log(this.tagId);
-        document.getElementById(this.tagId).textContent += this.toWrite;
+        var htmlTag = document.getElementById(this.tagId);
+        if(htmlTag != null) {
+            htmlTag.textContent += this.toWrite;
+        }
+    }
+
+    setTagId(tagId) {
+        this.tagId = tagId;
+    }
+
+    setTextToWrite(toWrite) {
+        this.toWrite = toWrite;
     }
 }
 

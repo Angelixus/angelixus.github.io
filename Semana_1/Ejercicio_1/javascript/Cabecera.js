@@ -1,5 +1,12 @@
 class Head {
   constructor(university, student) {
+
+    if(!!Head.instance) {
+      return Head.instance;
+    }
+
+    Head.instance = this;
+
     this.university = university;
     this.student = student;
     this.history = {};
@@ -15,6 +22,8 @@ class Head {
     ] = false;
     this.history[this.student.getName()] = false;
     this.history[this.student.getEmail()] = false;
+
+    return this;
   }
 
   getSubjectName() {
