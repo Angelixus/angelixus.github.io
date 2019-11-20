@@ -7,7 +7,7 @@ var baseCalcPrototype = {
   expression: ""
 };
 
-var baseCalc = Object.create(baseCalcPrototype, {
+baseCalc = Object.create(baseCalcPrototype, {
   matchExpression: {
     value: "^\\d+(.?\\d+)*[+-*/]\\d+(.?\\d+)*(=|[+-*/])$"
   },
