@@ -28,7 +28,7 @@ class NavInfo {
   getNavigatorLanguage() {
       var name = this.navigator.language;
       this.history.set(name, true);
-      this.name;
+      return name;
   }
 
   getRestOfData() {
@@ -44,3 +44,5 @@ class NavInfo {
 }
 
 var wholeNavInfo = new NavInfo();
+
+wholeNavInfo.getNavigatorLanguage();
