@@ -1,7 +1,6 @@
 class Head {
   constructor(university, student) {
-
-    if(!!Head.instance) {
+    if (!!Head.instance) {
       return Head.instance;
     }
 
@@ -9,75 +8,76 @@ class Head {
 
     this.university = university;
     this.student = student;
-    this.history = {};
-    this.history[this.student.getFirstSubject().getSubjectName()] = false;
-    this.history[this.student.getFirstSubject().getDegreeName()] = false;
-    this.history[this.university.getBuilding()] = false;
-    this.history[this.university.getUniversityName()] = false;
-    this.history[
+    this.history = new Map();
+    this.history.set(this.student.getFirstSubject().getSubjectName(), false);
+    this.history.set(this.student.getFirstSubject().getDegreeName(), false);
+    this.history.set(this.university.getBuilding(), false);
+    this.history.set(this.university.getUniversityName(), false);
+    this.history.set(
       this.student
         .getFirstSubject()
         .getCourse()
-        .getCourseName()
-    ] = false;
-    this.history[this.student.getName()] = false;
-    this.history[this.student.getEmail()] = false;
+        .getCourseName(),
+      false
+    );
+    this.history.set(this.student.getName(), false);
+    this.history.set(this.student.getEmail(), false);
 
     return this;
   }
 
   getSubjectName() {
-    name = this.student.getFirstSubject().getSubjectName();
-    this.history[name] = true;
+    var name = this.student.getFirstSubject().getSubjectName();
+    this.history.set(name, true);
     return name;
   }
 
   getDegreeName() {
-    name = this.student.getFirstSubject().getDegreeName();
-    this.history[name] = true;
+    var name = this.student.getFirstSubject().getDegreeName();
+    this.history.set(name, true);
     return name;
   }
 
   getBuilding() {
-    name = this.university.getBuilding();
-    this.history[name] = true;
+    var name = this.university.getBuilding();
+    this.history.set(name, true);
     return name;
   }
 
   getUniversityName() {
-    name = this.university.getUniversityName();
-    this.history[name] = true;
+    var name = this.university.getUniversityName();
+    this.history.set(name, true);
     return name;
   }
 
   getCourseName() {
-    name = this.student
+    var name = this.student
       .getFirstSubject()
       .getCourse()
       .getCourseName();
-    this.history[name] = true;
+    this.history.set(name, true);
     return name;
   }
 
   getStudentName() {
-    name = this.student.getName();
-    this.history[name] = true;
+    var name = this.student.getName();
+    this.history.set(name, true);
     return name;
   }
 
   getStudentEmail() {
-    name = this.student.getEmail();
-    this.history[name] = true;
+    var name = this.student.getEmail();
+    this.history.set(name, true);
     return name;
   }
 
   getRestOfData() {
     var res = [];
-    for(var key in this.history) {
-      if(!this.history[key]) {
+    this.history.forEach(function(value, key) {
+      if (!value) {
         res.push(key);
       }
-    }
+    });
 
     return res;
   }
@@ -178,3 +178,8 @@ function instantiateHead() {
 
   return head;
 }
+
+var head = instantiateHead();
+
+head.getSubjectName();
+head.getRestOfData();
