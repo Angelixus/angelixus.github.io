@@ -178,8 +178,3 @@ function instantiateHead() {
 
   return head;
 }
-
-var head = instantiateHead();
-
-head.getSubjectName();
-head.getRestOfData();
