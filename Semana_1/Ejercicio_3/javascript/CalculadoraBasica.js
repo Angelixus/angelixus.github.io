@@ -1,12 +1,42 @@
 const statusEnum = {
-    CREATING : 1,
-    ASSESSABLE : 2
-}
+  CREATING: 1,
+  ASSESSABLE: 2
+};
 
-class CalculadoraBasica {
+var baseCalcPrototype = {
+  expression: ""
+};
 
-    constructor() {
-        this.expression = '';
-        this.status = statusEnum.CREATING;
+var baseCalc = Object.create(baseCalcPrototype, {
+  matchExpression: {
+    value: "^\\d+(.?\\d+)*[+-*/]\\d+(.?\\d+)*(=|[+-*/])$"
+  },
+
+  isOperator: {
+    value: "^$[+-*/]$"
+  }
+});
+
+baseCalc.validateInputForPossibleResult = function(input) {
+  baseCalc.expression += input;
+
+  if (baseCalc.matchExpression.test(baseCalc.expression)) {
+    baseCalc.expression = baseCalc.expression.substring(
+      0, baseCalc.expression.length - 1);
+    baseCalc.expression = eval(baseCalc.expression);
+
+    if(baseCalc.isOperator.test(input)) {
+        baseCalc.expression += input;
     }
-}
+  }
+  this.showValueOnInput("numberShow", baseCalc.expression);
+};
+
+baseCalc.validateInputClear = function() {
+  baseCalc.expression = "";
+  this.showValueOnInput("numberShow", "");
+};
+
+baseCalc.showValueOnInput = function(id, text) {
+  document.getElementById(id).textContent = text;
+};
