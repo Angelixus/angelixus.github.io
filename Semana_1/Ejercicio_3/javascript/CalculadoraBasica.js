@@ -8,11 +8,11 @@ var baseCalcPrototype = {
 };
 
 baseCalc = Object.create(baseCalcPrototype, {
-  matchExpression: {
+  "matchExpression": {
     value: "^\\d+(.?\\d+)*[+-*/]\\d+(.?\\d+)*(=|[+-*/])$"
   },
 
-  isOperator: {
+  "isOperator": {
     value: "^$[+-*/]$"
   }
 });
