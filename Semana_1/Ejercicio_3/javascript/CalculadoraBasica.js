@@ -21,6 +21,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
   baseCalc.expression += input;
 
   console.log(input);
+  console.log(baseCalc.expression);
 
   if (baseCalc.matchExpression.test(baseCalc.expression)) {
     baseCalc.expression = baseCalc.expression.substring(
@@ -31,6 +32,8 @@ baseCalc.validateInputForPossibleResult = function(input) {
         baseCalc.expression += input;
     }
   }
+  
+  console.log(baseCalc.expression);
   this.showValueOnInput("numberShow", baseCalc.expression);
 };
 
