@@ -32,7 +32,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
         baseCalc.expression += input;
     }
   }
-  
+
   console.log(baseCalc.expression);
   this.showValueOnInput("numberShow", baseCalc.expression);
 };
@@ -43,5 +43,5 @@ baseCalc.validateInputClear = function() {
 };
 
 baseCalc.showValueOnInput = function(id, text) {
-  document.getElementById(id).textContent = text;
+  document.getElementById(id).value = text;
 };
