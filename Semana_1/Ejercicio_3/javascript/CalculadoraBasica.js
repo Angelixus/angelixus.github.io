@@ -20,6 +20,8 @@ baseCalc = Object.create(baseCalcPrototype, {
 baseCalc.validateInputForPossibleResult = function(input) {
   baseCalc.expression += input;
 
+  console.log(input);
+
   if (baseCalc.matchExpression.test(baseCalc.expression)) {
     baseCalc.expression = baseCalc.expression.substring(
       0, baseCalc.expression.length - 1);
