@@ -22,20 +22,22 @@ baseCalc = Object.create(baseCalcPrototype, {
 });
 
 baseCalc.validateInputForPossibleResult = function(input) {
-  baseCalc.expression += input;
+  if(!(baseCalc.expression.length == 0 && (input == '=' || baseCalc.isOperator.test(input)))) {
+    baseCalc.expression += input;
 
-  if (baseCalc.matchExpression.test(baseCalc.expression)) {
-    baseCalc.expression = baseCalc.expression.substring(
-      0, baseCalc.expression.length - 1);
-    baseCalc.expression = eval(baseCalc.expression);
-
-    if(baseCalc.isOperator.test(input)) {
-        baseCalc.expression += input;
+    if (baseCalc.matchExpression.test(baseCalc.expression)) {
+      baseCalc.expression = baseCalc.expression.substring(
+        0, baseCalc.expression.length - 1);
+      baseCalc.expression = eval(baseCalc.expression);
+  
+      if(baseCalc.isOperator.test(input)) {
+          baseCalc.expression += input;
+      }
     }
-  }
-
-  if(baseCalc.partialError.test(input) || input == '=') {
-    baseCalc.expression = '';
+  
+    if(baseCalc.partialError.test(input) || input == '=') {
+      baseCalc.expression = '';
+    }
   }
 
   this.showValueOnInput("numberShow", baseCalc.expression);
