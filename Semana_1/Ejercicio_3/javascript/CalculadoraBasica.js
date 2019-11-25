@@ -18,7 +18,7 @@ baseCalc = Object.create(baseCalcPrototype, {
   },
 
   "partialError" : {
-    value: /[\+\-\*\/=][\+\-\*\/=]+/
+    value: /[\+\*\/=][\+\*\/=]+/
   },
 
   "isNumber" : {
