@@ -14,6 +14,10 @@ baseCalc = Object.create(baseCalcPrototype, {
 
   "isOperator": {
     value: /^[\+\-\*\/]$/
+  },
+
+  "partialError" : {
+    value: /[\+\-\*\/=][\+\-\*\/=]+/
   }
 });
 
@@ -30,7 +34,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
     }
   }
 
-  if(baseCalc.isOperator.test(input) || input == '=') {
+  if(baseCalc.partialError.test(input) || input == '=') {
     baseCalc.expression = '';
   }
 
