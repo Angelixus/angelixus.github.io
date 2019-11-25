@@ -61,15 +61,15 @@ baseCalc.showValueOnInput = function(id, text) {
 baseCalc.setMemory = function() {
   var input = document.getElementById("numberShow").value;
   if(baseCalc.isNumber.test(input)) {
-    baseCalc.memory = input;
+    this.memory = input;
   }
 }
 
 baseCalc.sumToMemory = function() {
   var input = document.getElementById("numberShow").value;
   if(baseCalc.isNumber.test(input)) {
-    baseCalc.memory = eval(baseCalc.memory + '+' + input)
-    baseCalc.expression = baseCalc.memory;
+    this.memory = eval(baseCalc.memory + '+' + input)
+    this.expression = baseCalc.memory;
   }
   this.showValueOnInput("numberShow", baseCalc.expression);
 }
@@ -77,8 +77,8 @@ baseCalc.sumToMemory = function() {
 baseCalc.substractToMemory = function() {
   var input = document.getElementById("numberShow").value;
   if(baseCalc.isNumber.test(input)) {
-    baseCalc.memory = eval(baseCalc.memory + '-' + input)
-    baseCalc.expression = baseCalc.memory;
+    this.memory = eval(baseCalc.memory + '-' + input)
+    this.expression = baseCalc.memory;
   }
 
   this.showValueOnInput("numberShow", baseCalc.expression);
