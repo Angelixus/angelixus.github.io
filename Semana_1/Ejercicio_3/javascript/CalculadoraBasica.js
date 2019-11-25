@@ -59,10 +59,8 @@ baseCalc.showValueOnInput = function(id, text) {
 };
 
 baseCalc.setMemory = function() {
-  var input = document.getElementById("numberShow").value;
-  if(baseCalc.isNumber.test(input)) {
-    console.log(input);
-    baseCalc.memory = input;
+  if(baseCalc.isNumber.test(baseCalc.expression)) {
+    baseCalc.memory = baseCalc.expression;
   }
 }
 
