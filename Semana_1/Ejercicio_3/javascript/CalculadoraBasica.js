@@ -33,9 +33,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
       if(baseCalc.isOperator.test(input)) {
           baseCalc.expression += input;
       }
-    }
-  
-    if(baseCalc.partialError.test(input) || input == '=') {
+    } else if(baseCalc.partialError.test(baseCalc.expression) || input == '=') {
       baseCalc.expression = '';
     }
   }
