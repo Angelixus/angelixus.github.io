@@ -65,20 +65,17 @@ baseCalc.setMemory = function() {
 }
 
 baseCalc.sumToMemory = function() {
-  var input = document.getElementById("numberShow").value;
-  if(baseCalc.isNumber.test(input)) {
-    baseCalc.memory = eval(baseCalc.memory + '+' + input)
+  if(baseCalc.isNumber.test(baseCalc.expression)) {
+    baseCalc.memory = eval(baseCalc.memory + '+' + baseCalc.expression)
     baseCalc.expression = baseCalc.memory;
   }
   this.showValueOnInput("numberShow", baseCalc.expression);
 }
 
 baseCalc.substractToMemory = function() {
-  var input = document.getElementById("numberShow").value;
-  if(baseCalc.isNumber.test(input)) {
-    baseCalc.memory = eval(baseCalc.memory + '-' + input)
+  if(baseCalc.isNumber.test(baseCalc.expression)) {
+    baseCalc.memory = eval(baseCalc.memory + '-' + baseCalc.expression)
     baseCalc.expression = baseCalc.memory;
   }
-
   this.showValueOnInput("numberShow", baseCalc.expression);
 }
