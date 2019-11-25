@@ -43,7 +43,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
           baseCalc.expression += input;
       }
     } else if(baseCalc.partialError.test(baseCalc.expression) || input == '=') {
-      if(!(input == '-' && baseCalc.expression.substring(baseCalc.expression.length - 1, baseCalc.expression.length) != '-')) {
+      if(!(input == '-' && baseCalc.expression.substring(baseCalc.expression.length - 2, baseCalc.expression.length - 1) != '-')) {
         baseCalc.expression = '';
       }
     }
