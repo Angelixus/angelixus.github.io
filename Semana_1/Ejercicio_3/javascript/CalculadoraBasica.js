@@ -59,6 +59,8 @@ baseCalc.setMemory = function() {
   if(baseCalc.isNumber.test(baseCalc.expression)) {
     baseCalc.memory = baseCalc.expression;
   }
+  baseCalc.expression = '';
+  this.showValueOnInput("numberShow", baseCalc.expression);
 }
 
 baseCalc.sumToMemory = function() {
@@ -66,7 +68,6 @@ baseCalc.sumToMemory = function() {
     baseCalc.memory = eval(baseCalc.memory + '+' + baseCalc.expression)
     baseCalc.expression = baseCalc.memory;
   }
-  baseCalc.expression = '';
   this.showValueOnInput("numberShow", baseCalc.expression);
 }
 
