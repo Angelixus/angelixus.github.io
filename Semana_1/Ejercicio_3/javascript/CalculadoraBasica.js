@@ -60,6 +60,7 @@ baseCalc.showValueOnInput = function(id, text) {
 
 baseCalc.setMemory = function() {
   if(baseCalc.isNumber.test(baseCalc.expression)) {
+    console.log(baseCalc.expression)
     baseCalc.memory = baseCalc.expression;
   }
 }
