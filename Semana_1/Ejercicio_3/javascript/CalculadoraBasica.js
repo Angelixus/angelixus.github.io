@@ -18,6 +18,14 @@ baseCalc = Object.create(baseCalcPrototype, {
 
   "partialError" : {
     value: /[\+\-\*\/=][\+\-\*\/=]+/
+  },
+
+  "memory" : {
+    value = ''
+  },
+
+  "isNumber" : {
+    value: /^[0-9]+$/
   }
 });
 
@@ -49,3 +57,29 @@ baseCalc.validateInputClear = function() {
 baseCalc.showValueOnInput = function(id, text) {
   document.getElementById(id).value = text;
 };
+
+baseCalc.setMemory = function() {
+  var input = document.getElementById("numberShow").value;
+  if(baseCalc.isNumber.test(input)) {
+    baseCalc.memory = input;
+  }
+}
+
+baseCalc.sumToMemory = function() {
+  var input = document.getElementById("numberShow").value;
+  if(baseCalc.isNumber.test(input)) {
+    baseCalc.memory = eval(baseCalc.memory + '+' + input)
+    baseCalc.expression = baseCalc.memory;
+  }
+  this.showValueOnInput("numberShow", baseCalc.expression);
+}
+
+baseCalc.substractToMemory = function() {
+  var input = document.getElementById("numberShow").value;
+  if(baseCalc.isNumber.test(input)) {
+    baseCalc.memory = eval(baseCalc.memory + '-' + input)
+    baseCalc.expression = baseCalc.memory;
+  }
+
+  this.showValueOnInput("numberShow", baseCalc.expression);
+}
