@@ -30,6 +30,10 @@ baseCalc.validateInputForPossibleResult = function(input) {
     }
   }
 
+  if(!baseCalc.isOperator.test(input) || !input == '=') {
+    baseCalc.expression = '';
+  }
+
   this.showValueOnInput("numberShow", baseCalc.expression);
 };
 
