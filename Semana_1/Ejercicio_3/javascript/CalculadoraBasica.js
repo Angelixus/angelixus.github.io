@@ -4,7 +4,8 @@ const statusEnum = {
 };
 
 var baseCalcPrototype = {
-  expression: ""
+  expression: "",
+  memory: ""
 };
 
 baseCalc = Object.create(baseCalcPrototype, {
@@ -18,10 +19,6 @@ baseCalc = Object.create(baseCalcPrototype, {
 
   "partialError" : {
     value: /[\+\-\*\/=][\+\-\*\/=]+/
-  },
-
-  "memory" : {
-    value : ''
   },
 
   "isNumber" : {
@@ -80,3 +77,6 @@ baseCalc.substractToMemory = function() {
   }
   this.showValueOnInput("numberShow", baseCalc.expression);
 }
+
+baseCalc.expression = "7"
+baseCalc.setMemory();
