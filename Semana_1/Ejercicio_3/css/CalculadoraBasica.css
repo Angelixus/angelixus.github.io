@@ -8,3 +8,8 @@ td {
     margin: 0em;
     padding: 0em;
 }
+
+input {
+    width: 5em;
+    height: 5em;
+}
