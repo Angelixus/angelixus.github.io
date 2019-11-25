@@ -17,8 +17,12 @@ baseCalc = Object.create(baseCalcPrototype, {
     value: /^[\+\-\*\/]$/
   },
 
+  "cannotBeFirst" : {
+    value: /^[\+\*\/=]$/
+  },
+
   "partialError" : {
-    value: /[\+\*\/=][\+\*\/=]+/
+    value: /[\+\-\*\/=][\+\-\*\/=]+/
   },
 
   "isNumber" : {
@@ -27,7 +31,7 @@ baseCalc = Object.create(baseCalcPrototype, {
 });
 
 baseCalc.validateInputForPossibleResult = function(input) {
-  if(!(baseCalc.expression.length == 0 && (input == '=' || baseCalc.isOperator.test(input)))) {
+  if(!(baseCalc.expression.length == 0 && baseCalc.cannotBeFirst.test(input))) {
     baseCalc.expression += input;
 
     if (baseCalc.matchExpression.test(baseCalc.expression)) {
