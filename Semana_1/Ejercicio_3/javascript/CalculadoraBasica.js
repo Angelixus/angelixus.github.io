@@ -21,7 +21,7 @@ baseCalc = Object.create(baseCalcPrototype, {
   },
 
   "memory" : {
-    value = "0"
+    value = 0
   },
 
   "isNumber" : {
