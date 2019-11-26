@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 3 Semana 1</title>
+    <base href="https://angelixus.github.io/Semana_1/Ejercicio_3/" />
+    <link rel="stylesheet" href="css/CalculadoraCientífica.css" type="text/css" />
+    <script src="javascript/CalculadoraCientífica.js"></script>
+  </head>
+
+  <body>
+    <h1>Calculadora Básica</h1>
+    <form name="form">
+      <input type="text" id="numberShow" />
+    </form>
+    <table name="calculadora">
+      <tr>
+        <td><button type="button" onclick="scientificCalc.setMemory()">MRC</button></td>
+        <td><button type="button" onclick="scientificCalc.substractToMemory()">M-</button></td>
+        <td><button type="button" onclick="scientificCalc.sumToMemory()">M+</button></td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('/')"
+          >
+            /
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('7')"
+          >
+            7
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('8')"
+          >
+            8
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('9')"
+          >
+            9
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('*')"
+          >
+            *
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('4')"
+          >
+            4
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('5')"
+          >
+            5
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('6')"
+          >
+            6
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('-')"
+          >
+            -
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('1')"
+          >
+            1
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('2')"
+          >
+            2
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('3')"
+          >
+            3
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('+')"
+          >
+            +
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('0')"
+          >
+            0
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('.')"
+          >
+            .
+          </button>
+        </td>
+        <td>
+          <button type="button" onclick="scientificCalc.validateInputClear()">
+            C
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="scientificCalc.validateInputForPossibleResult('=')"
+          >
+            =
+          </button>
+        </td>
+
+        <td>
+          <button
+          type="button"
+          onclick="scientificCalc.validateInputForPossibleResult('\(')"
+        >
+          (</button>
+        </td>
+
+        <td>
+          <button
+          type="button"
+          onclick="scientificCalc.validateInputForPossibleResult('\)')"
+        >
+          )</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
