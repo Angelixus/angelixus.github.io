@@ -50,7 +50,7 @@ scientificCalc = Object.create(baseCalcPrototype, {
 
 scientificCalc.validateInputForPossibleResult = function(input) {
   if(!(scientificCalc.expression.length == 0 && scientificCalc.cannotBeFirst.test(input))) {
-    var possibleNumber = 0;
+    var possibleNumber = '';
     if(scientificCalc.expression.length > 1) {
       possibleNumber = scientificCalc.expression.substring(scientificCalc.expression.length - 1, scientificCalc.expression.length);
     }
