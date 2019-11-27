@@ -49,7 +49,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
     }
   }
 
-  this.showValueOnInput("numberShow", baseCalc.expression);
+  //this.showValueOnInput("numberShow", baseCalc.expression);
 };
 
 baseCalc.validateInputClear = function() {
@@ -84,3 +84,5 @@ baseCalc.substractToMemory = function() {
   }
   this.showValueOnInput("numberShow", baseCalc.expression);
 }
+
+baseCalc.validateInputForPossibleResult('1')
