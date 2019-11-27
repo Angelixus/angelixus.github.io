@@ -156,7 +156,7 @@ scientificCalc.deleteLast = function() {
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 };
 
-scientificCalc.sin() = function() {
+scientificCalc.sin = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     scientificCalc.expression = Math.sin(scientificCalc.expression)
   }
