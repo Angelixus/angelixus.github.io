@@ -120,7 +120,7 @@ scientificCalc.processStack = function(input) {
 };
 
 scientificCalc.showValueOnInput = function(id, text) {
-  //document.getElementById(id).value = text;
+  document.getElementById(id).value = text;
 };
 
 scientificCalc.deleteLast = function() {
