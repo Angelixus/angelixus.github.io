@@ -92,7 +92,7 @@ scientificCalc.validateInputForPossibleResult = function(input) {
     }
   }
 
-  if(stackForBrackets.length != 0 && input == '=') {
+  if(this.stackForBrackets.length != 0 && input == '=') {
     scientificCalc.expression = '';
   }
 
