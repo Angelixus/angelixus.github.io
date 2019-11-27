@@ -96,7 +96,7 @@ scientificCalc.validateInputForPossibleResult = function(input) {
     scientificCalc.expression = '';
   }
 
-  //this.showValueOnInput("numberShow", scientificCalc.expression);
+  this.showValueOnInput("numberShow", scientificCalc.expression);
 };
 
 scientificCalc.processStack = function(input) {
