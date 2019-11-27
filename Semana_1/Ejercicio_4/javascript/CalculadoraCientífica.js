@@ -146,7 +146,7 @@ scientificCalc.processStack = function(input) {
 };
 
 scientificCalc.showValueOnInput = function(id, text) {
-  document.getElementById(id).value = text;
+  //document.getElementById(id).value = text;
 };
 
 scientificCalc.deleteLast = function() {
@@ -156,11 +156,3 @@ scientificCalc.deleteLast = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 };
-
-var x = "2.2"
-var y = "22."
-var z = "22"
-
-var x1 = x.split('.')
-var y1 = y.split('.')
-var z1 = z.split('.')
