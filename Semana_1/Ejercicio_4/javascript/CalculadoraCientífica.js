@@ -100,6 +100,7 @@ scientificCalc.validateInputForPossibleResult = function(input) {
 };
 
 scientificCalc.processStack = function(input) {
+  console.log('VABBBBB')
   this.stackForBrackets.push(input);
 
   this.stackForBrackets.pop()
