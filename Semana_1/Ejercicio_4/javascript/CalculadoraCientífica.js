@@ -79,9 +79,9 @@ scientificCalc = Object.create(baseCalcPrototype, {
 });
 
 scientificCalc.validateInputForPossibleResult = function(input) {
-  if(wasResult && scientificCalc.isNumber.test(input)) {
+  if(scientificCalc.wasResult && scientificCalc.isNumber.test(input)) {
     scientificCalc.expression = input
-    wasResult = false;
+    scientificCalc.wasResult = false;
   } else if(!(scientificCalc.expression.length == 0 && scientificCalc.cannotBeFirst.test(input))) {
       var possibleNumber = '';
       if(scientificCalc.expression.length > 1) {
@@ -109,7 +109,7 @@ scientificCalc.validateInputForPossibleResult = function(input) {
             var value = scientificCalc.expression
             try {
               value = eval(scientificCalc.expression).toString()
-              wasResult = true;
+              scientificCalc.wasResult = true;
             } catch(e) {
               console.log(e.message)
             }
