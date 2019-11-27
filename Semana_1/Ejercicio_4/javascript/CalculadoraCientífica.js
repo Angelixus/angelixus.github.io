@@ -130,10 +130,3 @@ scientificCalc.deleteLast = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 };
-
-scientificCalc.validateInputForPossibleResult('3')
-scientificCalc.validateInputForPossibleResult('3')
-scientificCalc.setMemory()
-scientificCalc.validateInputForPossibleResult('9')
-scientificCalc.sumToMemory()
-scientificCalc.deleteLast()
