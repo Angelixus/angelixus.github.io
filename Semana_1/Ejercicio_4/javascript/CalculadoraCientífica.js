@@ -1,4 +1,4 @@
-var baseCalcPrototype = {
+var basicCalcPrototype = {
   expression: "",
   memory: "",
   isOperator : /^[\+\-\*\/]$/,
@@ -63,7 +63,7 @@ var baseCalcPrototype = {
 
 };
 
-scientificCalc = Object.create(baseCalcPrototype, {
+scientificCalc = Object.create(basicCalcPrototype, {
   "matchExpression": {
     value: /^(\(?|-?\d+(\.?-?\d+)*|[\+\-\*\/]|-?\d+(\.?-?\d+)*|\)?)*$/
   },
@@ -155,3 +155,11 @@ scientificCalc.deleteLast = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 };
+
+scientificCalc.sin() = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.sin(scientificCalc.expression)
+  }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+}
