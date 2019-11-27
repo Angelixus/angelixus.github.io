@@ -124,9 +124,9 @@ scientificCalc.showValueOnInput = function(id, text) {
 };
 
 scientificCalc.deleteLast = function() {
-  if(this.expression.length > 0) {
-    this.expression = this.expression.substring(0, this.expression.length - 1)
+  if(scientificCalc.expression.length > 0) {
+    scientificCalc.expression = scientificCalc.expression.substring(0, scientificCalc.expression.length - 1)
   }
 
-  this.showValueOnInput('numberShow', this.expression)
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
   };
