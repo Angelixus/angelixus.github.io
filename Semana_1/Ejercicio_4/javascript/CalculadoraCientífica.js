@@ -12,7 +12,15 @@ var baseCalcPrototype = {
   },
 
   setMemory : function() {
-    if(scientificCalc.isNumber.test(scientificCalc.expression)) {
+    var splitted = scientificCalc.expression.split('.')
+    var areValid = true;
+    for(number of splitted) {
+      if(!scientificCalc.isNumber.test(number)) {
+        areValid = false;
+        break;
+      }
+    }
+    if(areValid) {
       scientificCalc.memory = scientificCalc.expression;
     }
     scientificCalc.expression = '';
@@ -20,7 +28,16 @@ var baseCalcPrototype = {
   },
 
   sumToMemory : function() {
-    if(scientificCalc.isNumber.test(scientificCalc.expression)) {
+    var splitted = scientificCalc.expression.split('.')
+    var areValid = true;
+    for(number of splitted) {
+      if(!scientificCalc.isNumber.test(number)) {
+        areValid = false;
+        break;
+      }
+    }
+
+    if(areValid) {
       scientificCalc.memory = eval(scientificCalc.memory + '+' + scientificCalc.expression)
       scientificCalc.expression = scientificCalc.memory.toString();
     }
@@ -28,7 +45,16 @@ var baseCalcPrototype = {
   },
 
   substractToMemory : function() {
-    if(scientificCalc.isNumber.test(scientificCalc.expression)) {
+    var splitted = scientificCalc.expression.split('.')
+    var areValid = true;
+    for(number of splitted) {
+      if(!scientificCalc.isNumber.test(number)) {
+        areValid = false;
+        break;
+      }
+    }
+
+    if(areValid) {
       scientificCalc.memory = eval(scientificCalc.memory + '-' + scientificCalc.expression)
       scientificCalc.expression = scientificCalc.memory.toString();
     }
@@ -130,3 +156,11 @@ scientificCalc.deleteLast = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 };
+
+var x = "2.2"
+var y = "22."
+var z = "22"
+
+var x1 = x.split('.')
+var y1 = y.split('.')
+var z1 = z.split('.')

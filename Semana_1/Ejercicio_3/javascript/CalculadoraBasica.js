@@ -62,27 +62,51 @@ baseCalc.showValueOnInput = function(id, text) {
 };
 
 baseCalc.setMemory = function() {
-  if(baseCalc.isNumber.test(baseCalc.expression)) {
-    baseCalc.memory = baseCalc.expression;
+  var splitted = scientificCalc.expression.split('.')
+  var areValid = true;
+  for(number of splitted) {
+    if(!scientificCalc.isNumber.test(number)) {
+      areValid = false;
+      break;
+    }
   }
-  baseCalc.expression = '';
-  this.showValueOnInput("numberShow", baseCalc.expression);
+  if(areValid) {
+    scientificCalc.memory = scientificCalc.expression;
+  }
+  scientificCalc.expression = '';
+  this.showValueOnInput("numberShow", scientificCalc.expression);
 }
 
 baseCalc.sumToMemory = function() {
-  if(baseCalc.isNumber.test(baseCalc.expression)) {
-    baseCalc.memory = eval(baseCalc.memory + '+' + baseCalc.expression)
-    baseCalc.expression = baseCalc.memory;
+  var splitted = scientificCalc.expression.split('.')
+  var areValid = true;
+  for(number of splitted) {
+    if(!scientificCalc.isNumber.test(number)) {
+      areValid = false;
+      break;
+    }
   }
-  this.showValueOnInput("numberShow", baseCalc.expression);
+
+  if(areValid) {
+    scientificCalc.memory = eval(scientificCalc.memory + '+' + scientificCalc.expression)
+    scientificCalc.expression = scientificCalc.memory.toString();
+  }
+  this.showValueOnInput("numberShow", scientificCalc.expression);
 }
 
 baseCalc.substractToMemory = function() {
-  if(baseCalc.isNumber.test(baseCalc.expression)) {
-    baseCalc.memory = eval(baseCalc.memory + '-' + baseCalc.expression)
-    baseCalc.expression = baseCalc.memory;
+  var splitted = scientificCalc.expression.split('.')
+  var areValid = true;
+  for(number of splitted) {
+    if(!scientificCalc.isNumber.test(number)) {
+      areValid = false;
+      break;
+    }
   }
-  this.showValueOnInput("numberShow", baseCalc.expression);
-}
 
-baseCalc.validateInputForPossibleResult('1')
+  if(areValid) {
+    scientificCalc.memory = eval(scientificCalc.memory + '-' + scientificCalc.expression)
+    scientificCalc.expression = scientificCalc.memory.toString();
+  }
+  this.showValueOnInput("numberShow", scientificCalc.expression);
+}
