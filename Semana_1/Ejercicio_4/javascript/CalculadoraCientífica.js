@@ -22,7 +22,7 @@ var baseCalcPrototype = {
   sumToMemory : function() {
     if(scientificCalc.isNumber.test(scientificCalc.expression)) {
       scientificCalc.memory = eval(scientificCalc.memory + '+' + scientificCalc.expression)
-      scientificCalc.expression = scientificCalc.memory;
+      scientificCalc.expression = scientificCalc.memory.toString();
     }
     this.showValueOnInput("numberShow", scientificCalc.expression);
   },
@@ -30,7 +30,7 @@ var baseCalcPrototype = {
   substractToMemory : function() {
     if(scientificCalc.isNumber.test(scientificCalc.expression)) {
       scientificCalc.memory = eval(scientificCalc.memory + '-' + scientificCalc.expression)
-      scientificCalc.expression = scientificCalc.memory;
+      scientificCalc.expression = scientificCalc.memory.toString();
     }
     this.showValueOnInput("numberShow", scientificCalc.expression);
   }
@@ -75,7 +75,7 @@ scientificCalc.validateInputForPossibleResult = function(input) {
         }
           var value = scientificCalc.expression
           try {
-            value = eval(scientificCalc.expression)
+            value = eval(scientificCalc.expression).toString()
           } catch(e) {
             console.log(e.message)
           }
@@ -120,7 +120,7 @@ scientificCalc.processStack = function(input) {
 };
 
 scientificCalc.showValueOnInput = function(id, text) {
-  document.getElementById(id).value = text;
+  //document.getElementById(id).value = text;
 };
 
 scientificCalc.deleteLast = function() {
@@ -129,4 +129,11 @@ scientificCalc.deleteLast = function() {
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
-  };
+};
+
+scientificCalc.validateInputForPossibleResult('3')
+scientificCalc.validateInputForPossibleResult('3')
+scientificCalc.setMemory()
+scientificCalc.validateInputForPossibleResult('9')
+scientificCalc.sumToMemory()
+scientificCalc.deleteLast()
