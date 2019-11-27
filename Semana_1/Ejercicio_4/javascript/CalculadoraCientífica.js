@@ -84,10 +84,12 @@ scientificCalc.validateInputForPossibleResult = function(input) {
         if(scientificCalc.isOperator.test(input)) {
             scientificCalc.expression += input;
         }
-      } else if(scientificCalc.partialError.test(scientificCalc.expression) || input == '=') {
-          if(!(input == '-' && scientificCalc.expression.substring(scientificCalc.expression.length - 2, scientificCalc.expression.length - 1) != '-')) {
-            scientificCalc.expression = '';
-          }
+      }
+    }
+
+    if(scientificCalc.partialError.test(scientificCalc.expression) || input == '=') {
+      if(!(input == '-' && scientificCalc.expression.substring(scientificCalc.expression.length - 2, scientificCalc.expression.length - 1) != '-')) {
+        scientificCalc.expression = '';
       }
     }
   }
@@ -118,5 +120,9 @@ scientificCalc.processStack = function(input) {
 };
 
 scientificCalc.showValueOnInput = function(id, text) {
-  document.getElementById(id).value = text;
+  //document.getElementById(id).value = text;
 };
+
+scientificCalc.validateInputForPossibleResult('2')
+scientificCalc.validateInputForPossibleResult('+')
+scientificCalc.validateInputForPossibleResult('+')
