@@ -127,4 +127,6 @@ scientificCalc.deleteLast = function() {
   if(this.expression.length > 0) {
     this.expression = this.expression.substring(0, this.expression.length - 1)
   }
-};
+
+  this.showValueOnInput('numberShow', this.expression)
+  };
