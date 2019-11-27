@@ -120,9 +120,11 @@ scientificCalc.processStack = function(input) {
 };
 
 scientificCalc.showValueOnInput = function(id, text) {
-  //document.getElementById(id).value = text;
+  document.getElementById(id).value = text;
 };
 
-scientificCalc.validateInputForPossibleResult('2')
-scientificCalc.validateInputForPossibleResult('+')
-scientificCalc.validateInputForPossibleResult('+')
+scientificCalc.deleteLast = function() {
+  if(this.expression.length > 0) {
+    this.expression = this.expression.substring(0, this.expression.length - 1)
+  }
+};
