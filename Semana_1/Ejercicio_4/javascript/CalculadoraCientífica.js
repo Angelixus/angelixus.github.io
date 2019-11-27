@@ -70,63 +70,54 @@ scientificCalc = Object.create(baseCalcPrototype, {
 
   "stackForBrackets" : {
     value: []
-  },
-
-  "wasResult" : {
-    value : false
   }
-
 });
 
 scientificCalc.validateInputForPossibleResult = function(input) {
-  if(scientificCalc.wasResult && scientificCalc.isNumber.test(input)) {
-    scientificCalc.expression = input
-    scientificCalc.wasResult = false;
-  } else if(!(scientificCalc.expression.length == 0 && scientificCalc.cannotBeFirst.test(input))) {
-      var possibleNumber = '';
-      if(scientificCalc.expression.length > 1) {
-        possibleNumber = scientificCalc.expression.substring(scientificCalc.expression.length - 1, scientificCalc.expression.length);
-      }
+  if(!(scientificCalc.expression.length == 0 && scientificCalc.cannotBeFirst.test(input))) {
+    var possibleNumber = '';
+    if(scientificCalc.expression.length > 1) {
+      possibleNumber = scientificCalc.expression.substring(scientificCalc.expression.length - 1, scientificCalc.expression.length);
+    }
 
-      scientificCalc.expression += input;
+    scientificCalc.expression += input;
 
-      if(input == '(' || input == ')') {
-        this.processStack(input);
-      }
+    if(input == '(' || input == ')') {
+      this.processStack(input);
+    }
 
-      if(input == '(' && scientificCalc.expression.length > 1 && scientificCalc.isNumber.test(possibleNumber)) {
+    if(input == '(' && scientificCalc.expression.length > 1 && scientificCalc.isNumber.test(possibleNumber)) {
+      scientificCalc.expression = scientificCalc.expression.substring(
+        0, scientificCalc.expression.length - 1);
+        scientificCalc.expression += '*('
+    }
+
+    if(scientificCalc.stackForBrackets.length == 0) {
+      if (scientificCalc.matchExpression.test(scientificCalc.expression)) {
+        if(scientificCalc.isOperator.test(input)) {
         scientificCalc.expression = scientificCalc.expression.substring(
           0, scientificCalc.expression.length - 1);
-          scientificCalc.expression += '*('
-      }
-
-      if(scientificCalc.stackForBrackets.length == 0) {
-        if (scientificCalc.matchExpression.test(scientificCalc.expression)) {
-          if(scientificCalc.isOperator.test(input)) {
-          scientificCalc.expression = scientificCalc.expression.substring(
-            0, scientificCalc.expression.length - 1);
-          }
-            var value = scientificCalc.expression
-            try {
-              value = eval(scientificCalc.expression).toString()
-              scientificCalc.wasResult = true;
-            } catch(e) {
-              console.log(e.message)
-            }
-          scientificCalc.expression = value;
-      
-          if(scientificCalc.isOperator.test(input)) {
-              scientificCalc.expression += input;
-          }
         }
-      }
-
-      if(scientificCalc.partialError.test(scientificCalc.expression) || input == '=') {
-        if(!(input == '-' && scientificCalc.expression.substring(scientificCalc.expression.length - 2, scientificCalc.expression.length - 1) != '-')) {
-          scientificCalc.expression = '';
+          var value = scientificCalc.expression
+          try {
+            value = eval(scientificCalc.expression).toString()
+          } catch(e) {
+            console.log(e.message)
+          }
+        scientificCalc.expression = value;
+    
+        if(scientificCalc.isOperator.test(input)) {
+            scientificCalc.expression += input;
         }
       }
     }
+
+    if(scientificCalc.partialError.test(scientificCalc.expression) || input == '=') {
+      if(!(input == '-' && scientificCalc.expression.substring(scientificCalc.expression.length - 2, scientificCalc.expression.length - 1) != '-')) {
+        scientificCalc.expression = '';
+      }
+    }
+  }
 
   if(this.stackForBrackets.length != 0 && input == '=') {
     scientificCalc.expression = '';
