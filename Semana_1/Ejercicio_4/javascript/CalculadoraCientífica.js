@@ -163,3 +163,46 @@ scientificCalc.sin = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
+
+scientificCalc.cos = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.cos(scientificCalc.expression)
+  }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+}
+
+scientificCalc.tan = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.tan(scientificCalc.expression)
+  }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+}
+
+scientificCalc.sec = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.sec(scientificCalc.expression)
+  }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+}
+
+scientificCalc.cosec = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.cosec(scientificCalc.expression)
+  }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+}
+
+scientificCalc.cotan = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.cotan(scientificCalc.expression)
+  }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+}
+
+scientificCalc.validateInputForPossibleResult('5.909297426825685')
+scientificCalc.validateInputForPossibleResult('6')
