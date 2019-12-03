@@ -182,7 +182,7 @@ scientificCalc.tan = function() {
 
 scientificCalc.sec = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = Math.sec(scientificCalc.expression)
+    scientificCalc.expression = 1 / Math.cos(scientificCalc.expression)
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -190,7 +190,7 @@ scientificCalc.sec = function() {
 
 scientificCalc.cosec = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = Math.cosec(scientificCalc.expression)
+    scientificCalc.expression = 1 / Math.sin(scientificCalc.expression)
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -198,7 +198,7 @@ scientificCalc.cosec = function() {
 
 scientificCalc.cotan = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = Math.cotan(scientificCalc.expression)
+    scientificCalc.expression = 1 / Math.tan(scientificCalc.expression)
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
