@@ -145,9 +145,7 @@ scientificCalc.processStack = function(input) {
 };
 
 scientificCalc.showValueOnInput = function(id, text) {
-  window.onload = function() {
     document.getElementById(id).value = text;
-  }
 };
 
 scientificCalc.deleteLast = function() {
@@ -205,6 +203,3 @@ scientificCalc.cotan = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
-
-scientificCalc.validateInputForPossibleResult('5.909297426825685')
-scientificCalc.validateInputForPossibleResult('6')
