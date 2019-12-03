@@ -203,3 +203,15 @@ scientificCalc.cotan = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
+
+scientificCalc.ln = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.log(scientificCalc.expression)
+  }
+}
+
+scientificCalc.log = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    scientificCalc.expression = Math.log10(scientificCalc.expression)
+  }
+}
