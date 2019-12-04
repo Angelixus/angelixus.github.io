@@ -65,7 +65,7 @@ var basicCalcPrototype = {
 
 scientificCalc = Object.create(basicCalcPrototype, {
   "matchExpression": {
-    value: /^(\(?|-?\d+(\.?-?\d+)*|[\+\-\*\/]|-?\d+(\.?-?\d+)*|\)?)*$/
+    value: /^(\(?|-?\d+(\.?-?\d+)*|[\+\-\*\/\^]|-?\d+(\.?-?\d+)*|\)?)*$/
   },
 
   "stackForBrackets" : {
@@ -101,6 +101,11 @@ scientificCalc.validateInputForPossibleResult = function(input) {
           var value = scientificCalc.expression
           try {
             value = eval(scientificCalc.expression).toString()
+            if(scientificCalc.expression.includes('^')) {
+              scientificCalc.expression.replace("^", "Math.pow(");
+              scientificCalc.expression += ')';
+              value = eval(scientificCalc.expression).toString();
+            }
           } catch(e) {
             console.log(e.message)
           }
