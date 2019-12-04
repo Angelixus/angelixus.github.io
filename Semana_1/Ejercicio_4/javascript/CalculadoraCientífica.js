@@ -65,7 +65,7 @@ var basicCalcPrototype = {
 
 scientificCalc = Object.create(basicCalcPrototype, {
   "matchExpression": {
-    value: /^(\(?|-?\d+(\.?-?\d+)*|[\+\-\*\/\^]|-?\d+(\.?-?\d+)*|\)?)*$/
+    value: /^(\(?|-?\d+(\.?-?\d+)*|[\+\-\*\/\^sqrt]|-?\d+(\.?-?\d+)*|\)?)*$/
   },
 
   "stackForBrackets" : {
@@ -236,3 +236,13 @@ scientificCalc.log = function() {
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
 
+scientificCalc.sqrt = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    var num = eval(scientificCalc.expression)
+    if(num >= 0) {
+      scientificCalc.expression = Math.sqrt(scientificCalc.expression);
+    } else {
+      scientificCalc.expression = "";
+    }
+  }
+}
