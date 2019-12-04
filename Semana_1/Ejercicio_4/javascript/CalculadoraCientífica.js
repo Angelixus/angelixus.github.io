@@ -102,7 +102,8 @@ scientificCalc.validateInputForPossibleResult = function(input) {
           try {
             value = eval(scientificCalc.expression).toString()
             if(scientificCalc.expression.includes('^')) {
-              scientificCalc.expression.replace("^", "Math.pow(");
+              scientificCalc.expression = scientificCalc.expression.replace("^", ",");
+              scientificCalc.expression = "Math.pow(" + scientificCalc.expression;
               scientificCalc.expression += ')';
               value = eval(scientificCalc.expression).toString();
             }
