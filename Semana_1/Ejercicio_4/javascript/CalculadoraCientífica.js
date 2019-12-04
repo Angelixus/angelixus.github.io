@@ -208,9 +208,10 @@ scientificCalc.ln = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     var num = eval(scientificCalc.expression)
     if(num >= 0) {
-      scientificCalc.expression = Math.log10(scientificCalc.expression)
+      scientificCalc.expression = Math.log(scientificCalc.expression)
+    } else {
+      scientificCalc.expression = ""
     }
-    scientificCalc.expression = Math.log(scientificCalc.expression)
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -221,6 +222,8 @@ scientificCalc.log = function() {
     var num = eval(scientificCalc.expression)
     if(num >= 0) {
       scientificCalc.expression = Math.log10(scientificCalc.expression)
+    } else {
+      scientificCalc.expression = ""
     }
   }
 
