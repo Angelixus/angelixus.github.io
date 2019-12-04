@@ -245,4 +245,7 @@ scientificCalc.sqrt = function() {
       scientificCalc.expression = "";
     }
   }
+
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
+
 }
