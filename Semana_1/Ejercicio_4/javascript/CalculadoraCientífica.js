@@ -265,3 +265,16 @@ scientificCalc.fact = function() {
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
+
+scientificCalc.tenpowerx() = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    value = scientificCalc.expression
+    try {
+      value = Math.pow(10, eval(value))
+    } catch(e) {
+      value = "";
+    }
+
+    scientificCalc.expression = value;
+  }  
+}
