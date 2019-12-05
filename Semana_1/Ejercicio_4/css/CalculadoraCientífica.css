@@ -3,6 +3,7 @@ button {
     height: 5em;
     font-size: 1.4em;
     font-weight: bolder;
+    align-content: center;
 }
 
 td {
@@ -13,12 +14,13 @@ td {
 
 input {
     width: 81.5em;
+    align-content: center;
 }
 
 h1 {
     color: white;
     text-align: center;
-    padding: 0px 25px;
+    padding: 40px 40px;
     text-transform: uppercase;
     background-color: black;
 }
