@@ -277,5 +277,6 @@ scientificCalc.tenpowerx = function() {
 
     scientificCalc.expression = value;
   }
+  console.log(scientificCalc.expression)
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
