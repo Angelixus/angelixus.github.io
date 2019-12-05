@@ -280,3 +280,16 @@ scientificCalc.tenpowerx = function() {
   console.log(scientificCalc.expression)
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
+
+scientificCalc.squarePower = function() {
+  if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
+    value = scientificCalc.expression
+    try {
+      value = Math.pow(eval(value), 2).toString();
+    } catch(e) {
+      value = ""
+    }
+
+    scientificCalc.expression = value
+  }
+}
