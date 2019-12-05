@@ -266,7 +266,7 @@ scientificCalc.fact = function() {
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
 
-scientificCalc.tenpowerx() = function() {
+scientificCalc.tenpowerx = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     value = scientificCalc.expression
     try {
@@ -276,5 +276,6 @@ scientificCalc.tenpowerx() = function() {
     }
 
     scientificCalc.expression = value;
-  }  
+  }
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
