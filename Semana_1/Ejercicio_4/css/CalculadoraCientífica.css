@@ -16,8 +16,9 @@ input {
 }
 
 h1 {
-    color: #000;
+    color: white;
     text-align: center;
     padding: 0px 25px;
     text-transform: uppercase;
+    background-color: black;
 }
