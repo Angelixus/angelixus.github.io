@@ -190,7 +190,6 @@ scientificCalc.sec = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     scientificCalc.expression = 1 / Math.cos(scientificCalc.expression)
   }
-
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
 
@@ -252,12 +251,14 @@ scientificCalc.sqrt = function() {
 scientificCalc.fact = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     var num = eval(scientificCalc.expression)
-    if(num >= 0) {
+    if(num > 0) {
       var accum = num--;
       while(num > 0) {
         accum *= num--;
       }
       scientificCalc.expression = accum.toString();
+    } else if(num == 0) {
+      scientificCalc.expression = "1";
     } else {
       scientificCalc.expression = "";
     }
