@@ -57,3 +57,8 @@ rpnCalc.tryResult = function() {
   }
   this.showValueOnInput("numberShow", rpnCalc.result);
 };
+
+rpnCalc.clearAll = function() {
+    rpnCalc.stackCurrent = ""
+    rpnCalc.result = ""
+}
