@@ -18,8 +18,8 @@ rpnCalc.introducteToStack = function(input) {
 };
 
 rpnCalc.copyToStack = function() {
-    stackCurrent += localStack;
-    localStack = ""
+    rpnCalc.stackCurrent += localStack;
+    rpnCalc.localStack = ""
 
     this.showValueOnInput("numberShow", rpnCalc.localStack);
     this.showValueOnInput("stackShow", rpnCalc.stackCurrent)
@@ -30,7 +30,7 @@ rpnCalc.showValueOnInput = function(id, text) {
 };
 
 rpnCalc.calculate = function(input) {
-    stackCurrent += input;
+    rpnCalc.stackCurrent += input;
     rpnCalc.tryResult()
 }
 
