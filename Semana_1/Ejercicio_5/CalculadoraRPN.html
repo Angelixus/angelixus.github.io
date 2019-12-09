@@ -9,8 +9,9 @@
   </head>
 
   <body>
-    <h1>Calculadora Básica</h1>
+    <h1>Calculadora RPN</h1>
     <form name="form">
+      <input type="text" id="stackShow">
       <input type="text" id="numberShow" />
     </form>
 
@@ -34,7 +35,7 @@
           <button
             type="button"
             onclick="rpnCalc
-            .introducteToStack('/')"
+            .calculate('/')"
           >
             /
           </button>
@@ -72,7 +73,7 @@
           <button
             type="button"
             onclick="rpnCalc
-            .introducteToStack('*')"
+            .calculate('*')"
           >
             *
           </button>
@@ -110,7 +111,7 @@
           <button
             type="button"
             onclick="rpnCalc
-            .introducteToStack('-')"
+            .calculate('-')"
           >
             -
           </button>
@@ -148,7 +149,7 @@
           <button
             type="button"
             onclick="rpnCalc
-            .introducteToStack('+')"
+            .calculate('+')"
           >
             +
           </button>
@@ -184,9 +185,9 @@
           <button
             type="button"
             onclick="rpnCalc
-            .tryResult()"
+            .copyToStack()"
           >
-            =
+            Enter
           </button>
         </td>
       </tr>

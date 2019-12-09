@@ -1,5 +1,6 @@
 var rpnCalcPrototype = {
   result: "",
+  localStack: "",
   stackCurrent: "",
   memory: "",
   isNumber: /^-?[0-9]+$/,
@@ -10,15 +11,28 @@ rpnCalc = Object.create(rpnCalcPrototype);
 
 rpnCalc.introducteToStack = function(input) {
   if (rpnCalc.isNumber.test(input) || rpnCalc.isOperator.test(input)) {
-    rpnCalc.stackCurrent += input;
+    rpnCalc.localStack += input;
   }
 
-  this.showValueOnInput("numberShow", rpnCalc.stackCurrent);
+  this.showValueOnInput("numberShow", rpnCalc.localStack);
 };
+
+rpnCalc.copyToStack = function() {
+    stackCurrent += localStack;
+    localStack = ""
+
+    this.showValueOnInput("numberShow", rpnCalc.localStack);
+    this.showValueOnInput("stackShow", rpnCalc.stackCurrent)
+}
 
 rpnCalc.showValueOnInput = function(id, text) {
   document.getElementById(id).value = text;
 };
+
+rpnCalc.calculate = function(input) {
+    stackCurrent += input;
+    rpnCalc.tryResult()
+}
 
 rpnCalc.tryResult = function() {
   stackForEvaluation = [];
@@ -50,9 +64,11 @@ rpnCalc.tryResult = function() {
   }
   if (happenedProblem) {
     rpnCalc.stackCurrent = "";
+    rpnCalc.localStack = "";
     rpnCalc.result = "";
   } else {
     rpnCalc.stackCurrent = "";
+    rpnCalc.localStack = "";
     rpnCalc.result = stackForEvaluation.pop();
   }
   this.showValueOnInput("numberShow", rpnCalc.result);
@@ -61,4 +77,5 @@ rpnCalc.tryResult = function() {
 rpnCalc.clearAll = function() {
     rpnCalc.stackCurrent = ""
     rpnCalc.result = ""
+    rpnCalc.localStack = ""
 }
