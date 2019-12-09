@@ -87,3 +87,15 @@ rpnCalc.clearAll = function() {
     this.showValueOnInput("numberShow", "");
     this.showValueOnInput("stackShow", "")
 }
+
+rpnCalc.sin = function() {
+
+}
+
+rpnCalc.cos = function() {
+    
+}
+
+rpnCalc.tan = function() {
+    
+}
