@@ -1,6 +1,8 @@
 button {
-    width: 5em;
+    width: 8em;
     height: 5em;
+    font-size: 1.4em;
+    font-weight: bolder;
 }
 
 td {
@@ -10,5 +12,23 @@ td {
 }
 
 input {
-    width: 20.4em;
+    width: 81.5em;
+    align-content: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    padding: 40px 40px;
+    text-transform: uppercase;
+    background-color: black;
+}
+
+table  {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    text-align: center;
 }
