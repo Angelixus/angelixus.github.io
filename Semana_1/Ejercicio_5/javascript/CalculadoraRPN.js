@@ -9,8 +9,10 @@ var rpnCalcPrototype = {
 rpnCalc = Object.create(rpnCalcPrototype);
 
 rpnCalc.introducteToStack = function(input) {
-  if (rpnCalc.isNumber.test(input) || rpnCalc.isOperator.test(input)) {
-    rpnCalc.localStack += input;
+  if (rpnCalc.isNumber.test(input) || rpnCalc.isOperator.test(input) || input == '.') {
+    if(!(input == '.' && localStack.includes('.'))) {
+        rpnCalc.localStack += input;
+    }
   }
 
   this.showValueOnInput("numberShow", rpnCalc.localStack);
