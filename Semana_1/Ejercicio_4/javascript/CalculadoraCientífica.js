@@ -282,7 +282,6 @@ scientificCalc.tenpowerx = function() {
 
     scientificCalc.expression = value;
   }
-  console.log(scientificCalc.expression)
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
 
@@ -297,4 +296,5 @@ scientificCalc.squarePower = function() {
 
     scientificCalc.expression = value
   }
+  scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
