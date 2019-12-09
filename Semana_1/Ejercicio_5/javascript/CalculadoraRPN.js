@@ -3,14 +3,15 @@ var rpnCalcPrototype = {
   stackCurrent: [],
   memory: "",
   isNumber: /^-?\d+(\.?-?\d+)*$/,
+  containsNumber: /[0-9]+/,
   isOperator: /^[\+\-\*\/]$/
 };
 
 rpnCalc = Object.create(rpnCalcPrototype);
 
 rpnCalc.introducteToStack = function(input) {
-  if (rpnCalc.isNumber.test(input) || rpnCalc.isOperator.test(input)) {
-    if(!(input == '.' && rpnCalc.localStack.includes('.'))) {
+  if (rpnCalc.isNumber.test(input) || rpnCalc.isOperator.test(input) || input == '.') {
+    if(!(input == '.' && rpnCalc.localStack.includes('.')) || !(!rpnCalc.containsNumber.test(rpnCalc.localStack) && input == '.')) {
         rpnCalc.localStack += input;
     }
   }
