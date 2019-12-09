@@ -31,8 +31,8 @@ baseCalc = Object.create(baseCalcPrototype, {
 });
 
 baseCalc.validateInputForPossibleResult = function(input) {
-  if(baseCalc.expression == "Infinity" || scientificCalc.expression == "NaN") {
-    baseCalc.expression = "";
+  if(baseCalc.expression == "Infinity" || baseCalc.expression == "NaN") {
+    baseCalc.expression = ""; 
   }
   if(!(baseCalc.expression.length == 0 && baseCalc.cannotBeFirst.test(input))) {
     baseCalc.expression += input;
