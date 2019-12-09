@@ -2,7 +2,7 @@ var rpnCalcPrototype = {
   localStack: "",
   stackCurrent: [],
   memory: "",
-  isNumber: /^-?[0-9]+$/,
+  isNumber: /^-?[0-9]+[\.]-?[0-9]+$/,
   isOperator: /^[\+\-\*\/]$/
 };
 
