@@ -37,6 +37,8 @@ rpnCalc.showValueOnInput = function(id, text) {
 rpnCalc.calculate = function(input) {
     rpnCalc.stackCurrent.push(input);
     rpnCalc.tryResult()
+
+    this.showValueOnInput("stackShow", "")
 }
 
 rpnCalc.tryResult = function() {
