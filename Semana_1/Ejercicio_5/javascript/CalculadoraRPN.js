@@ -25,7 +25,7 @@ rpnCalc.copyToStack = function() {
 
     var localStackRepresentation = ""
     for(token of rpnCalc.stackCurrent) {
-        localStackRepresentation += token
+        localStackRepresentation += token + ","
     }
     this.showValueOnInput("stackShow", localStackRepresentation)
 }
@@ -80,7 +80,10 @@ rpnCalc.tryResult = function() {
 };
 
 rpnCalc.clearAll = function() {
-    rpnCalc.stackCurrent = ""
+    rpnCalc.stackCurrent = []
     rpnCalc.result = ""
     rpnCalc.localStack = ""
+
+    this.showValueOnInput("numberShow", "");
+    this.showValueOnInput("stackShow", "")
 }
