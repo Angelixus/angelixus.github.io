@@ -1,8 +1,3 @@
-const statusEnum = {
-  CREATING: 1,
-  ASSESSABLE: 2
-};
-
 var baseCalcPrototype = {
   expression: "",
   memory: ""
