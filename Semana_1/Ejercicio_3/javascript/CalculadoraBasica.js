@@ -31,6 +31,9 @@ baseCalc = Object.create(baseCalcPrototype, {
 });
 
 baseCalc.validateInputForPossibleResult = function(input) {
+  if(baseCalc.expression == "Infinity" || scientificCalc.expression == "NaN") {
+    baseCalc.expression = "";
+  }
   if(!(baseCalc.expression.length == 0 && baseCalc.cannotBeFirst.test(input))) {
     baseCalc.expression += input;
 
@@ -49,7 +52,7 @@ baseCalc.validateInputForPossibleResult = function(input) {
     }
   }
 
-  //this.showValueOnInput("numberShow", baseCalc.expression);
+  this.showValueOnInput("numberShow", baseCalc.expression);
 };
 
 baseCalc.validateInputClear = function() {
