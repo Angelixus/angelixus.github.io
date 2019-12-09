@@ -89,13 +89,40 @@ rpnCalc.clearAll = function() {
 }
 
 rpnCalc.sin = function() {
+    value = rpnCalc.localStack
+    try {
+        value = Math.sin(value)
+    } catch(e) {
+        console.log(e)
+    }
 
+    rpnCalc.localStack = value
+
+    this.showValueOnInput("numberShow", rpnCalc.localStack);
 }
 
 rpnCalc.cos = function() {
-    
+    value = rpnCalc.localStack
+    try {
+        value = Math.cos(value)
+    } catch(e) {
+        console.log(e)
+    }
+
+    rpnCalc.localStack = value
+
+    this.showValueOnInput("numberShow", rpnCalc.localStack);
 }
 
 rpnCalc.tan = function() {
-    
+    value = rpnCalc.localStack
+    try {
+        value = Math.tan(value)
+    } catch(e) {
+        console.log(e)
+    }
+
+    rpnCalc.localStack = value
+
+    this.showValueOnInput("numberShow", rpnCalc.localStack);
 }
