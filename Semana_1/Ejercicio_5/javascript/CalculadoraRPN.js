@@ -22,29 +22,38 @@ rpnCalc.showValueOnInput = function(id, text) {
 
 rpnCalc.tryResult = function() {
   stackForEvaluation = [];
+  var happenedProblem = false;
+
   for (token of rpnCalc.stackCurrent) {
     if (rpnCalc.isNumber.test(token)) {
       stackForEvaluation.push(token);
     } else if (rpnCalc.isOperator.test(token)) {
-        try {
-            var operand1 = stackForEvaluation.pop();
-            var operand2 = stackForEvaluation.pop();
+      try {
+        var operand1 = stackForEvaluation.pop();
+        var operand2 = stackForEvaluation.pop();
 
-            if(rpnCalc.isNumber.test(operand1) && rpnCalc.isNumber.test(operand2)) {
-                var partialRes = eval(operand1 + token + operand2)
-                stackForEvaluation.push(partialRes)
-            } else {
-                stackCurrent = ""
-                result = ""
-                break
-            }
-        } catch(e) {
-            stackCurrent = ""
-            result = ""
-            break
+        if (
+          rpnCalc.isNumber.test(operand1) &&
+          rpnCalc.isNumber.test(operand2)
+        ) {
+          var partialRes = eval(operand1 + token + operand2);
+          stackForEvaluation.push(partialRes);
+        } else {
+          happenedProblem = true;
+          break;
         }
+      } catch (e) {
+        happenedProblem = true;
+        break;
+      }
     }
   }
-
+  if (happenedProblem) {
+    rpnCalc.stackCurrent = "";
+    rpnCalc.result = "";
+  } else {
+    rpnCalc.stackCurrent = "";
+    rpnCalc.result = stackForEvaluation.pop();
+  }
   this.showValueOnInput("numberShow", rpnCalc.result);
 };
