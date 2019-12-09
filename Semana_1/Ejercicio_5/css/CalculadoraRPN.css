@@ -11,11 +11,7 @@ td {
     padding: 0em;
 }
 
-tr {
-    align-content: center;
-}
-
-input {
+.inputRow {
     width: 54.1em;
     align-content: center;
 }
