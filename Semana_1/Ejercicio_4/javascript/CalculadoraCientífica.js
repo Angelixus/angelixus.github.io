@@ -74,6 +74,10 @@ scientificCalc = Object.create(basicCalcPrototype, {
 });
 
 scientificCalc.validateInputForPossibleResult = function(input) {
+  if(scientificCalc.expression == "Infinity" || scientificCalc.expression == "NaN") {
+    scientificCalc.expression = "";
+  }
+
   if(!(scientificCalc.expression.length == 0 && scientificCalc.cannotBeFirst.test(input))) {
     var possibleNumber = '';
     if(scientificCalc.expression.length > 1) {
