@@ -11,6 +11,10 @@ td {
     padding: 0em;
 }
 
+tr {
+    align-content: center;
+}
+
 input {
     width: 54.1em;
     align-content: center;
