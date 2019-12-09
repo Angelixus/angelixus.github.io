@@ -1,5 +1,4 @@
 var rpnCalcPrototype = {
-  result: "",
   localStack: "",
   stackCurrent: [],
   memory: "",
@@ -72,18 +71,15 @@ rpnCalc.tryResult = function() {
   if (happenedProblem) {
     rpnCalc.stackCurrent = [];
     rpnCalc.localStack = "";
-    rpnCalc.result = "";
   } else {
     rpnCalc.stackCurrent = [];
-    rpnCalc.localStack = "";
-    rpnCalc.result = stackForEvaluation.pop();
+    rpnCalc.localStack = stackForEvaluation.pop();
   }
-  this.showValueOnInput("numberShow", rpnCalc.result);
+  this.showValueOnInput("numberShow", rpnCalc.localStack);
 };
 
 rpnCalc.clearAll = function() {
     rpnCalc.stackCurrent = []
-    rpnCalc.result = ""
     rpnCalc.localStack = ""
 
     this.showValueOnInput("numberShow", "");
