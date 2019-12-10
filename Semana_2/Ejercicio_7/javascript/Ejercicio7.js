@@ -47,7 +47,7 @@ class JQueryWrapper {
   }
 
   addRowsAndColumns(tableToAdd, whereToShowRes) {
-    stack = []
+    var stack = []
     $(tableToAdd + ' tr.item').each(function(i, tr) {
       stack.push(i)
       stack.push(tr)
