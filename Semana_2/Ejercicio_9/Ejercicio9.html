@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 9 Semana 2</title>
+    <base href="https://angelixus.github.io/Semana_2/Ejercicio_9/" />
+    <link rel="stylesheet" href="css/Ejercicio9.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="javascript/Ejercicio9.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Weather Info</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Ciudad</h2>
+        <select id="citySelect">
+          <option value="london" selected onselect="londonGetter.showWeather()"
+            >Londres</option
+          >
+          <option value="madrid" onselect="londonGetter.showWeather()"
+            >Madrid</option
+          >
+          <option value="rome" onselect="londonGetter.showWeather()"
+            >Roma</option
+          >
+          <option value="newyork" onselect="londonGetter.showWeather()"
+            >Nueva York</option
+          >
+          <option value="tokyo" onselect="londonGetter.showWeather()"
+            >Tokyo</option
+          >
+        </select>
+      </section>
+      <section>
+        <h2>Tiempo</h2>
+        <img
+          class="weatherImage"
+          src="icons/unknown.png"
+          alt="Imagen representando el tiempo"
+        />
+        <p class="temperature-value">.º<span>C</span></p>
+        <p class="temperature-description">-</p>
+        <p class="place">-</p>
+      </section>
+    </main>
+  </body>
+</html>
