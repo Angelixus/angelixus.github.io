@@ -41,7 +41,6 @@ class WeatherGetter {
         })
         .then(function(data) {
             localTemp = Math.floor(data.main.temp);
-            console.log(localTemp)
             localDesc = data.weather[0].description;
             localIconId = data.weather[0].icon;
         })
