@@ -30,7 +30,7 @@ class WeatherGetter {
         objectReference.temperature = Math.round(data.main.temp);
         objectReference.description = data.weather[0].description;
         objectReference.iconId = data.weather[0].icon;
-        objectReference.cityCountry = data.name + "," + data.sys.country;
+        objectReference.cityCountry = data.name + ", " + data.sys.country;
       })
       .then(function() {
         var selectedName = "";
