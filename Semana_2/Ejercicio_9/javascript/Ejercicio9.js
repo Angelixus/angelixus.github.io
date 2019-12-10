@@ -27,7 +27,7 @@ class WeatherGetter {
       //data: paramsData,
       dataType: "xml",
       success: function(xml){
-        console.log(xml)
+        console.log(xml.type)
       }
   });
 
