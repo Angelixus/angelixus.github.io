@@ -46,8 +46,6 @@ class WeatherGetter {
   }
 
   showWeather() {
-    console.log(this.cityCountry);
-
     $(".weatherImage").attr("src", "icons/" + this.iconId + ".png");
     $(".temperature-value").text(this.temperature.toString() + "ºC");
     $(".temperature-description").text(this.description);
@@ -69,7 +67,6 @@ class LocationManager {
     var objectReference = this;
     $(document).ready(function() {
       $("#citySelect").on("change", function() {
-        console.log("HI");
         if ($(this).prop("value") == "london") {
           objectReference.london.showWeather();
         }
