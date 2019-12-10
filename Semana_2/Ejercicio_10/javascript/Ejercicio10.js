@@ -44,6 +44,32 @@ class WeatherGetter {
         }
       }
   });
+
+    /*
+    fetch(this.weatherApi)
+      .then(function(response) {
+        let data = response.json();
+        return data;
+      })
+      .then(function(data) {
+        objectReference.temperature = Math.round(data.main.temp);
+        objectReference.description = data.weather[0].description;
+        objectReference.iconId = data.weather[0].icon;
+        objectReference.cityCountry = data.name + ", " + data.sys.country;
+      })
+      .then(function() {
+        var selectedName = "";
+        $("#citySelect > option").each(function() {
+          if ($(this).prop("selected") == true) {
+            selectedName = $(this).prop("value");
+          }
+        });
+
+        if (selectedName == objectReference.optionName) {
+          objectReference.showWeather();
+        }
+      });
+      */
        
   }
 

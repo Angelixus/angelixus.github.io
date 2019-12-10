@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 10 Semana 2</title>
+    <base href="https://angelixus.github.io/Semana_2/Ejercicio_9/" />
+    <link rel="stylesheet" href="css/Ejercicio9.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="javascript/Ejercicio9.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Currency Converter Fixer</h1>
+    </header>
+
+    <main>
+      <section>
+          <h2>Moneda base</h2>
+          <p>Euro (EUR)</p>
+          <input type="text" id="eurInput">
+          <button type="button" onclick="converter.ConvertEurToOthers()">Convertir</button>
+      </section>
+
+      <section>
+        <h2>Resultado</h2>
+        <p>Dolar estadounidense (USD)</p>
+        <input readonly type="text" id="usdOut">
+
+        <p>Dolar australiano (AUD)</p>
+        <input readonly type="text" id="audOut">
+
+        <p>Dolar canadiense (CAD)</p>
+        <input readonly type="text" id="cadOut">
+
+        <p>Esloti polaco (PLN)</p>
+        <input readonly type="text" id="plnOut">
+
+        <p>Peso mexicano (MXN)</p>
+        <input readonly type="text" id="mxnOut">
+      </section>
+    </main>
+  </body>
+</html>
