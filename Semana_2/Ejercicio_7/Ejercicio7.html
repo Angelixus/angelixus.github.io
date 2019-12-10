@@ -35,11 +35,11 @@
       <h3>Ocultar/Mostrar Tablas</h3>
       <p>Prueba a ocultar o mostrar toda la tabla con los siguientes botones</p>
       <button type="button" onclick="jqueryWrapper.hide('#hideShowTable')">
-            Ocultar
-          </button>
-          <button type="button" onclick="jqueryWrapper.show('#hideShowTable')">
-            Mostrar
-          </button>
+        Ocultar
+      </button>
+      <button type="button" onclick="jqueryWrapper.show('#hideShowTable')">
+        Mostrar
+      </button>
       <table id="hideShowTable">
         <tr>
           <td>1</td>
@@ -60,11 +60,92 @@
       </table>
 
       <h3>Ocultar/Mostrar titulos</h3>
-      <p onclick="jqueryWrapper.hideShowDependingOnVisibility('TableTitleh2')">Clickame para ocultar el titulo de esta seccion</p>
+      <p onclick="jqueryWrapper.hideShowDependingOnVisibility('TableTitleh2')">
+        Clickame para ocultar el titulo de esta seccion
+      </p>
     </section>
 
     <section>
-        
+      <h2>Ocultar Secciones enteras</h2>
+      <p
+        onclick="jqueryWrapper.hideShowDependingOnVisibility('LosSopranoSection')"
+      >
+        Clickame para ocultar todo el contenido debajo mia de la siguiente
+        seccion
+      </p>
+    </section>
+
+    <section id="LosSopranoSection">
+      <h2>Los Soprano</h2>
+      <h3>Introduccion</h3>
+      <p>
+        Los Soprano (en inglés The Sopranos) fue una serie de televisión
+        estadounidense creada y producida por David Chase y HBO. La serie se
+        estrenó en Estados Unidos el 10 de enero de 1999 por el canal de
+        televisión por cable HBO, que la emitió ininterrumpidamente hasta su
+        desenlace, el 10 de junio de 2007. La trama de la serie gira en torno al
+        mafioso de Nueva Jersey Tony Soprano (James Gandolfini) y las
+        dificultades que enfrenta tanto en su hogar como en la organización
+        criminal que dirige. A su vez, la serie también se centra en la historia
+        de los personajes cercanos a Tony, especialmente su esposa Carmela (Edie
+        Falco) y su sobrino y protegido Christopher Moltisanti (Michael
+        Imperioli).
+      </p>
+      <h3>Temporadas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Temporada</th>
+            <th>Episodios</th>
+            <th>Primera emisión</th>
+            <th>Última emisión</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>13</td>
+            <td>10 de enero de 1999</td>
+            <td>4 de abril de 1999</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>13</td>
+            <td>16 de enero de 2000</td>
+            <td>9 de abril de 2000</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>13</td>
+            <td>4 de marzo de 2001</td>
+            <td>20 de mayo de 2001</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>13</td>
+            <td>15 de septiembre de 2002</td>
+            <td>8 de diciembre de 2002</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>13</td>
+            <td>7 de marzo de 2004</td>
+            <td>6 de junio de 2004</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>13</td>
+            <td>12 de marzo de 2006</td>
+            <td>10 de junio de 2007</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </body>
 </html>
