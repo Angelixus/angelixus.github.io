@@ -21,7 +21,7 @@ class WeatherGetter {
   getWeather() {
     var objectReference = this;
 
-    http_request = new XMLHttpRequest();
+    var http_request = new XMLHttpRequest();
     http_request.open('GET', 'http://www.example.org/algun.archivo', true);
     http_request.send(null)
 
@@ -55,7 +55,7 @@ class WeatherGetter {
           objectReference.showWeather();
         }
       });
-      */
+      */  
   }
 
   showWeather() {
