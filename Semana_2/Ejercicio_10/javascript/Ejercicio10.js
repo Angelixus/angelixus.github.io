@@ -11,14 +11,14 @@ class Converter {
       $.ajax({
         url: objectReference.api,
         dataType: "json",
-        success: function(json){
+        success: function(json) {
           $("#usdOut").val(eurVal * json.rates.USD);
           $("#audOut").val(eurVal * json.rates.AUD);
           $("#cadOut").val(eurVal * json.rates.CAD);
           $("#plnOut").val(eurVal * json.rates.PLN);
-          $("#mxnOut").val(eurVal * json.rates.MXN);        
+          $("#mxnOut").val(eurVal * json.rates.MXN);
         }
-    });
+      });
     } catch (e) {
       $("#eurInput").val("");
       $("#usdOut").val("");
@@ -27,8 +27,6 @@ class Converter {
       $("#plnOut").val("");
       $("#mxnOut").val("");
     }
-
-    
   }
 }
 
