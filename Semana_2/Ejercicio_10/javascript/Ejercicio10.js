@@ -4,32 +4,21 @@ class Converter {
   }
 
   convert(inputId) {
-    //try {
-      //var eurVal = parseFloat($(inputId).val());
+    try {
+      var eurVal = parseFloat($(inputId).val());
       var objectReference = this;
 
       $.ajax({
         url: objectReference.api,
         dataType: "json",
         success: function(json){
-          console.log(json)
+          $("#usdOut").text(eurVal * json.rates.USD);
+          $("#audOut").text(eurVal * json.rates.AUD);
+          $("#cadOut").text(eurVal * json.rates.CAD);
+          $("#plnOut").text(eurVal * json.rates.PLN);
+          $("#mxnOut").text(eurVal * json.rates.MXN);        
         }
     });
-
-    /*
-    
-      fetch(this.api)
-        .then(function(response) {
-          let data = response.json();
-          return data;
-        })
-        .then(function(data) {
-          $("#usdOut").text(eurVal * data.rates.USD);
-          $("#audOut").text(eurVal * data.rates.AUD);
-          $("#cadOut").text(eurVal * data.rates.CAD);
-          $("#plnOut").text(eurVal * data.rates.PLN);
-          $("#mxnOut").text(eurVal * data.rates.MXN);
-        });
     } catch (e) {
       $("#eurInput").text("");
       $("#usdOut").text("");
@@ -39,7 +28,7 @@ class Converter {
       $("#mxnOut").text("");
     }
 
-    */
+    
   }
 }
 
