@@ -36,11 +36,9 @@ class JQueryWrapper {
   }
 
   showAllHTMLElements(parentToAppend) {
-
-    $('html').find("*").andSelf().each(function() {
+    $('html').find('*').andSelf().each(function() {
       alert(this.nodeName);
-  });​
-
+    })
   }
 }
 
