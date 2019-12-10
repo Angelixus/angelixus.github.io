@@ -42,9 +42,19 @@
       </button>
 
       <p>Prueba a añadir y borrar filas</p>
-      <input type="text" id="rowInputAdd">
-      <button type="button" onclick="jqueryWrapper.addRow('#hideShowTable', 'rowInputAdd')">Añadir</button>
-      <button type="button" onclick="jqueryWrapper.removeLastRow('#hideShowTable')">Borrar</button>
+      <input type="text" id="rowInputAdd" />
+      <button
+        type="button"
+        onclick="jqueryWrapper.addRow('#hideShowTable', 'rowInputAdd')"
+      >
+        Añadir
+      </button>
+      <button
+        type="button"
+        onclick="jqueryWrapper.removeLastRow('#hideShowTable')"
+      >
+        Borrar
+      </button>
       <table id="hideShowTable">
         <tr>
           <td>1</td>
@@ -154,17 +164,64 @@
     </section>
 
     <section id="addParagraph">
-        <h2>Añadir/Eliminar elementos</h2>
-        <p>Escribe en el area de texto siguiente para añadir un nuevo párrafo</p>
-        <textarea name="addParagraphArea" id="addParagraphArea" cols="30" rows="10"></textarea>
-        <button type="button" onclick="jqueryWrapper.addParagraphToEnd('#addParagraph', 'addParagraphArea')">Añadir Párrafo</button>
-        <button type="button" onclick="jqueryWrapper.deleteLastParagraph('#addParagraph')">Borrar Párrafo</button>
+      <h2>Añadir/Eliminar elementos</h2>
+      <p>Escribe en el area de texto siguiente para añadir un nuevo párrafo</p>
+      <textarea
+        name="addParagraphArea"
+        id="addParagraphArea"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <button
+        type="button"
+        onclick="jqueryWrapper.addParagraphToEnd('#addParagraph', 'addParagraphArea')"
+      >
+        Añadir Párrafo
+      </button>
+      <button
+        type="button"
+        onclick="jqueryWrapper.deleteLastParagraph('#addParagraph')"
+      >
+        Borrar Párrafo
+      </button>
     </section>
 
     <section id="traverseHTML">
-        <h2>Mostrar todos los elementos HTML</h2>
-        <p>Clicka el siguiente boton para mostrar los padres de los elementos HTML y que tipo de elemento son</p>
-        <button type="button" onclick="jqueryWrapper.showAllHTMLElements('#traverseHTML')">Recorrer HTML</button>
+      <h2>Mostrar todos los elementos HTML</h2>
+      <p>
+        Clicka el siguiente boton para mostrar los padres de los elementos HTML
+        y que tipo de elemento son
+      </p>
+      <button
+        type="button"
+        onclick="jqueryWrapper.showAllHTMLElements('#traverseHTML')"
+      >
+        Recorrer HTML
+      </button>
+    </section>
+
+    <section id="addAllTableElements">
+      <p>A continuacion se mostrara una tabla, aprieta el boton que hay al final para sumar todas las filas y columnas</p>
+      <table id="tableToAdd">
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+      </table>
+
+      <button type="button" onclick="jqueryWrapper.addRowsAndColumns('#tableToAdd', '#addAllTableElements')">Sumar Filas y Columnas</button>
     </section>
   </body>
 </html>

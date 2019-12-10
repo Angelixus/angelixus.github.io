@@ -45,6 +45,13 @@ class JQueryWrapper {
       }
     })
   }
+
+  addRowsAndColumns(tableToAdd, whereToShowRes) {
+    $(tableToAdd + ' tr.item').each(function(i, tr) {
+      console.log(i)
+      console.log(tr)
+    })
+  }
 }
 
 jqueryWrapper = new JQueryWrapper();
