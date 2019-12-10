@@ -6,7 +6,8 @@ class Converter {
 
   convert(inputId) {
     //try {
-      var eurVal = parseFloat($(inputId).val());
+      //var eurVal = parseFloat($(inputId).val());
+      var objectReference = this;
 
       $.ajax({
         type: "GET",
