@@ -1,8 +1,7 @@
 class Converter {
-  constructor(htmlwrapper) {
+  constructor() {
     this.api =
       "http://data.fixer.io/api/latest?access_key=fb1bbcdec0121b41137b4efd51b7c6e2&symbols=USD,AUD,CAD,PLN,MXN&format=1";
-    this.htmlwrapper = htmlwrapper;
   }
 
   convert(inputId) {
