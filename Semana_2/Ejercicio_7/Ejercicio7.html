@@ -41,9 +41,10 @@
         Mostrar
       </button>
 
-      <p>Prueba a añadir una fila nueva</p>
+      <p>Prueba a añadir y borrar filas</p>
       <input type="text" id="rowInputAdd">
       <button type="button" onclick="jqueryWrapper.addRow('#hideShowTable', 'rowInputAdd')">Añadir</button>
+      <button type="button" onclick="jqueryWrapper.removeLastRow('#hideShowTable')">Borrar</button>
       <table id="hideShowTable">
         <tr>
           <td>1</td>

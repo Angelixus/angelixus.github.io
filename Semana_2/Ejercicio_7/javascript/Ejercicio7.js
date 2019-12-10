@@ -21,6 +21,10 @@ class JQueryWrapper {
     var toAdd = document.getElementById(inputToTakeInfo).value;
     $(tableId).append("<tr><td>" + toAdd + "</td></tr>");
   }
+
+  removeLastRow(tableId) {
+      $(tableId + ' tr:last').remove()
+  }
 }
 
 jqueryWrapper = new JQueryWrapper();
