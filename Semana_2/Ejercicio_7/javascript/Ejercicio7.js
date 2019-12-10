@@ -34,6 +34,13 @@ class JQueryWrapper {
   deleteLastParagraph(parentId) {
     $(parentId + " p:last").remove();
   }
+
+  showAllHTMLElements(parentToAppend) {
+    $('html').each(function() {
+        var element = $(this)
+        $(parentToAppend).append('<p> Elemento: ' + element.prev().prop('tagName') + 'Padre: ' + element.parent().prev().prop('tagName') + '</p>')
+    })
+  }
 }
 
 jqueryWrapper = new JQueryWrapper();
