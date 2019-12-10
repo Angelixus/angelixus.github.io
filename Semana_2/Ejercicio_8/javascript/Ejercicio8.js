@@ -8,6 +8,7 @@ class WeatherGetter {
     this.description = "";
     this.iconId = "";
     this.cityCountry = "";
+    this.optionName = optionName
 
     this.weatherApi =
       "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -40,7 +41,6 @@ class WeatherGetter {
           }
         });
 
-        console.log(objectReference.optionName)
         if (selectedName == objectReference.optionName) {
           objectReference.showWeather();
         }
@@ -48,12 +48,6 @@ class WeatherGetter {
   }
 
   showWeather() {
-    console.log("Showing Weather");
-    console.log(this.temperature);
-    console.log(this.description);
-    console.log(this.iconId);
-    console.log(this.cityCountry);
-
     $(".weatherImage").attr("src", "icons/" + this.iconId + ".png");
     $(".temperature-value").text(this.temperature.toString() + 'ºC');
     $(".temperature-description").text(this.description);
