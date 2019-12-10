@@ -13,7 +13,7 @@ class WeatherGetter {
       this.lat.toString() +
       "&lon=" +
       this.long.toString() +
-      '&units=metric&appid="4a4e634754d6993e73a82028d2d7c60e"';
+      '&units=metric&appid=4a4e634754d6993e73a82028d2d7c60e';
 
     this.getWeather();
   }
@@ -36,6 +36,10 @@ class WeatherGetter {
         this.temperature = localTemp;
         this.description = localDesc;
         this.iconId = localIconId;
+  }
+
+  showWeather() {
+
   }
 }
 
