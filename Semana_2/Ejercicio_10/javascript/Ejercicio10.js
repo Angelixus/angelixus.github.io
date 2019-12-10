@@ -1,132 +1,49 @@
-class WeatherGetter {
-  constructor(optionName, lat, long) {
-    this.lat = lat;
-    this.long = long;
-    this.temperature = 0;
-    this.description = "";
-    this.iconId = "";
-    this.cityCountry = "";
-    this.optionName = optionName;
-
-    this.weatherApi =
-      "https://api.openweathermap.org/data/2.5/weather?lat=" +
-      this.lat.toString() +
-      "&lon=" +
-      this.long.toString() +
-      "&mode=xml&units=metric&appid=4a4e634754d6993e73a82028d2d7c60e";
-
-    this.getWeather();
+class Converter {
+  constructor(htmlwrapper) {
+    this.api = "http://data.fixer.io/api/latest?access_key=fb1bbcdec0121b41137b4efd51b7c6e2&symbols=USD,AUD,CAD,PLN,MXN&format=1";
+    this.htmlwrapper = htmlwrapper
   }
 
-  getWeather() {
-    var objectReference = this;
+  convert(inputVal) {
+    try {
+      var eurVal = parseFloat(this.htmlwrapper.readFromHtml(inputVal))
 
-    $.ajax({
-      type: "GET",
-      url: objectReference.weatherApi,
-      //data: paramsData,
-      dataType: "xml",
-      success: function(xml){
-        objectReference.temperature = Math.round(parseFloat(xml.getElementsByTagName('temperature')[0].getAttribute('value')))
-        objectReference.description = xml.getElementsByTagName('weather')[0].getAttribute('value')
-        objectReference.iconId = xml.getElementsByTagName('weather')[0].getAttribute('icon')
-        objectReference.cityCountry = xml.getElementsByTagName('city')[0].getAttribute('name') + ', ' + xml.getElementsByTagName('country')[0].firstChild.nodeValue
-
-        var selectedName = "";
-        $("#citySelect > option").each(function() {
-          if ($(this).prop("selected") == true) {
-            selectedName = $(this).prop("value");
-          }
-        });
-
-        if (selectedName == objectReference.optionName) {
-          objectReference.showWeather();
-        }
-      }
-  });
-
-    /*
-    fetch(this.weatherApi)
+      var objectReference = this;
+      fetch(this.api)
       .then(function(response) {
         let data = response.json();
         return data;
       })
       .then(function(data) {
-        objectReference.temperature = Math.round(data.main.temp);
-        objectReference.description = data.weather[0].description;
-        objectReference.iconId = data.weather[0].icon;
-        objectReference.cityCountry = data.name + ", " + data.sys.country;
+        objectReference.htmlwrapper.writeToHTML('#usdOut', eurVal * data.rates.USD)
+        objectReference.htmlwrapper.writeToHTML('#audOut', eurVal * data.rates.AUD)
+        objectReference.htmlwrapper.writeToHTML('#cadOut', eurVal * data.rates.CAD)
+        objectReference.htmlwrapper.writeToHTML('#plnOut', eurVal * data.rates.PLN)
+        objectReference.htmlwrapper.writeToHTML('#mxnOut', eurVal * data.rates.MXN)
       })
-      .then(function() {
-        var selectedName = "";
-        $("#citySelect > option").each(function() {
-          if ($(this).prop("selected") == true) {
-            selectedName = $(this).prop("value");
-          }
-        });
-
-        if (selectedName == objectReference.optionName) {
-          objectReference.showWeather();
-        }
-      });
-      */
-       
-  }
-
-  showWeather() {
-    $(".weatherImage").attr("src", "icons/" + this.iconId + ".png");
-    $(".temperature-value").text(this.temperature.toString() + "ºC");
-    $(".temperature-description").text(this.description);
-    $(".place").text(this.cityCountry);
+    } catch(e) {
+      this.htmlwrapper.writeToHTML('#eurInput', '')
+      this.htmlwrapper.writeToHTML('#usdOut', '')
+      this.htmlwrapper.writeToHTML('#audOut', '')
+      this.htmlwrapper.writeToHTML('#cadOut', '')
+      this.htmlwrapper.writeToHTML('#plnOut', '')
+      this.htmlwrapper.writeToHTML('#mxnOut', '')
+    }
   }
 }
 
-class LocationManager {
-  constructor(london, tokyo, rome, madrid, newyork) {
-    this.london = london;
-    this.tokyo = tokyo;
-    this.rome = rome;
-    this.madrid = madrid;
-    this.newyork = newyork;
-    this.initializeListeners();
+class HtmlWrapper {
+  constructor() {
+
   }
 
-  initializeListeners() {
-    var objectReference = this;
-    $(document).ready(function() {
-      $("#citySelect").on("change", function() {
-        if ($(this).prop("value") == "london") {
-          objectReference.london.showWeather();
-        }
-        if ($(this).prop("value") == "madrid") {
-          objectReference.madrid.showWeather();
-        }
+  writeToHTML(id, toWrite) {
+    document.getElementById(id).value = toWrite;
+  }
 
-        if ($(this).prop("value") == "rome") {
-          objectReference.rome.showWeather();
-        }
-        if ($(this).prop("value") == "newyork") {
-          objectReference.newyork.showWeather();
-        }
-
-        if ($(this).prop("value") == "tokyo") {
-          objectReference.tokyo.showWeather();
-        }
-      });
-    });
+  readFromHtml(id) {
+    return document.getElementById(id).value;
   }
 }
 
-var londonGetter = new WeatherGetter("london", 51.5085, -0.1258);
-var tokyoGetter = new WeatherGetter("tokyo", 35.6828, 139.759);
-var romeGetter = new WeatherGetter("rome", 41.8933, 12.4829);
-var madridGetter = new WeatherGetter("madrid", 40.4167, -3.7036);
-var newyorkGetter = new WeatherGetter("newyork", 40.7306, -73.9867);
-
-new LocationManager(
-  londonGetter,
-  tokyoGetter,
-  romeGetter,
-  madridGetter,
-  newyorkGetter
-);
+var converter = new Converter(new HtmlWrapper());
