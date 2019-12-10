@@ -154,10 +154,11 @@
     </section>
 
     <section id="addParagraph">
-        <h2>Añadir elementos nuevos</h2>
+        <h2>Añadir/Eliminar elementos</h2>
         <p>Escribe en el area de texto siguiente para añadir un nuevo párrafo</p>
         <textarea name="addParagraphArea" id="addParagraphArea" cols="30" rows="10"></textarea>
         <button type="button" onclick="jqueryWrapper.addParagraphToEnd('#addParagraph', 'addParagraphArea')">Añadir Párrafo</button>
+        <button type="button" onclick="jqueryWrapper.deleteLastParagraph('#addParagraph')">Borrar Párrafo</button>
     </section>
   </body>
 </html>

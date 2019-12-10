@@ -23,12 +23,16 @@ class JQueryWrapper {
   }
 
   removeLastRow(tableId) {
-      $(tableId + ' tr:last').remove()
+    $(tableId + " tr:last").remove();
   }
 
   addParagraphToEnd(parentId, inputToTakeInfo) {
     var info = document.getElementById(inputToTakeInfo).value;
-    $(parentId).append('<p>' + info + '</p>')
+    $(parentId).append("<p>" + info + "</p>");
+  }
+
+  deleteLastParagraph(parentId) {
+    $(parentId + " p:last").remove();
   }
 }
 
