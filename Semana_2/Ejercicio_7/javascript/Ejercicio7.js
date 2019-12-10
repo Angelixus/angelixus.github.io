@@ -11,3 +11,5 @@ class JQueryWrapper {
         $(toShow).show()
     }
 }
+
+jqueryWrapper = new JQueryWrapper()
