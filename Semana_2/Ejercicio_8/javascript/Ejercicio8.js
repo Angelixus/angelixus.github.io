@@ -54,38 +54,36 @@ class WeatherGetter {
 }
 
 class LocationManager {
-    constructor(london, tokyo, rome, madrid, newyork) {
-        this.london= london;
-        this.tokyo = tokyo;
-        this.rome = rome;
-        this.madrid = madrid;
-        this.newyork = newyork;
-        this.initializeListeners()
-    }
+  constructor(london, tokyo, rome, madrid, newyork) {
+    this.london = london;
+    this.tokyo = tokyo;
+    this.rome = rome;
+    this.madrid = madrid;
+    this.newyork = newyork;
+    this.initializeListeners();
+  }
 
-    initializeListeners() {
-        $("#citySelect").change(function() {
-            if ($(this).prop("value") == "london") {
-              london.showWeather();
-            }
-            if ($(this).prop("value") == "madrid") {
-              madrid.showWeather();
-            }
-          
-            if ($(this).prop("value") == "rome") {
-              rome.showWeather();
-            }
-            if ($(this).prop("value") == "newyork") {
-              newyork.showWeather();
-            }
-          
-            if ($(this).prop("value") == "tokyo") {
-              tokyo.showWeather();
-            }
-          });
-    }
+  initializeListeners() {
+    $("#citySelect").change(function() {
+      if ($(this).prop("value") == "london") {
+        london.showWeather();
+      }
+      if ($(this).prop("value") == "madrid") {
+        madrid.showWeather();
+      }
 
-    
+      if ($(this).prop("value") == "rome") {
+        rome.showWeather();
+      }
+      if ($(this).prop("value") == "newyork") {
+        newyork.showWeather();
+      }
+
+      if ($(this).prop("value") == "tokyo") {
+        tokyo.showWeather();
+      }
+    });
+  }
 }
 
 var londonGetter = new WeatherGetter("london", 51.5085, -0.1258);
@@ -94,4 +92,10 @@ var romeGetter = new WeatherGetter("rome", 41.8933, 12.4829);
 var madridGetter = new WeatherGetter("madrid", 40.4167, -3.7036);
 var newyorkGetter = new WeatherGetter("newyork", 40.7306, -73.9867);
 
-new LocationManager(londonGetter, tokyoGetter, romeGetter, madridGetter, newyorkGetter);
+new LocationManager(
+  londonGetter,
+  tokyoGetter,
+  romeGetter,
+  madridGetter,
+  newyorkGetter
+);
