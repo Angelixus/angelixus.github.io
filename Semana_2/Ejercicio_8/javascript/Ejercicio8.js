@@ -40,11 +40,13 @@ class WeatherGetter {
             return data;
         })
         .then(function(data) {
-            console.log(data)
             localTemp = Math.floor(data.main.temp);
+            console.log(localTemp)
             localDesc = data.weather[0].description;
             localIconId = data.weather[0].icon;
         })
+
+        console.log(localTemp)
 
         this.temperature = localTemp;
         this.description = localDesc;
