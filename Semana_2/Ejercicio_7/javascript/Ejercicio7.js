@@ -1,28 +1,26 @@
 class JQueryWrapper {
-    constructor() {
+  constructor() {}
 
-    }
+  hide(toHide) {
+    $(toHide).hide();
+  }
 
-    hide(toHide) {
-        $(toHide).hide()
-    }
+  show(toShow) {
+    $(toShow).show();
+  }
 
-    show(toShow) {
-        $(toShow).show()
+  hideShowDependingOnVisibility(id) {
+    if ($(id).is(":visible")) {
+      this.hide(id);
+    } else {
+      this.show(id);
     }
+  }
 
-    hideShowDependingOnVisibility(id) {
-        if($(id).is(":visible")) {
-            this.hide(id)
-        } else {
-            this.show(id)
-        }
-    }
-
-    addRow(tableId, inputToTakeInfo) {
-        var toAdd = document.getElementById(inputToTakeInfo).value
-            $(tableId).append('<tr><td>' + toAdd + '</td></tr>');
-    }
+  addRow(tableId, inputToTakeInfo) {
+    var toAdd = document.getElementById(inputToTakeInfo).value;
+    $(tableId).append("<tr><td>" + toAdd + "</td></tr>");
+  }
 }
 
-jqueryWrapper = new JQueryWrapper()
+jqueryWrapper = new JQueryWrapper();
