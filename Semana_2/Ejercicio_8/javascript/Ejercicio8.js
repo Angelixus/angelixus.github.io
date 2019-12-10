@@ -40,7 +40,7 @@ class WeatherGetter {
             return data;
         })
         .then(function(data) {
-            objectReference.temperature = Math.floor(data.main.temp);
+            objectReference.temperature = Math.round(data.main.temp);
             objectReference.description = data.weather[0].description;
             objectReference.iconId = data.weather[0].icon;
         })
