@@ -37,8 +37,8 @@ class JQueryWrapper {
 
   showAllHTMLElements(parentToAppend) {
     $('html').find('*').each(function() {
-      var parentTag = $(this).parent().prev().prop('tagName')
-      if(parentTag == undefined) {
+      var parent = $(this).parent()
+      if(parent == undefined) {
         $(parentToAppend).append('<p>Elemento: ' + $(this).prop('tagName') + ' - Padre: No Tiene' + '</p>')
       } else {
         $(parentToAppend).append('<p>Elemento: ' + $(this).prop('tagName') + ' - Padre: ' + $(this).parent().prop('tagName') + '</p>')
