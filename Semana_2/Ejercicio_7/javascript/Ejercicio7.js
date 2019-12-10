@@ -39,9 +39,9 @@ class JQueryWrapper {
     $('html').find('*').each(function() {
       var parentTag = $(this).parent().prev().prop('tagName')
       if(parentTag == undefined) {
-        $(parentToAppend).append('<p>Elemento: ' + $(this).prev().prop('tagName') + ' Padre: No Tiene' + '</p>')
+        $(parentToAppend).append('<p>Elemento: ' + $(this).prop('tagName') + ' Padre: No Tiene' + '</p>')
       } else {
-        $(parentToAppend).append('<p>Elemento: ' + $(this).prev().prop('tagName') + ' Padre: ' + $(this).parent().prev().prop('tagName') + '</p>')
+        $(parentToAppend).append('<p>Elemento: ' + $(this).prop('tagName') + ' Padre: ' + $(this).parent().prop('tagName') + '</p>')
       }
     })
   }
