@@ -49,7 +49,7 @@ class JQueryWrapper {
   addRowsAndColumns(tableToAdd, whereToShowRes) {
     var rowsAccum = 0;
     $(tableToAdd + ' > tbody  > tr').each(function() {
-      $(this + ' > td').each(function() {
+      $(this).find('td').each(function() {
         rowsAccum += parseInt($(this).val(), 10)
       }) 
     })
