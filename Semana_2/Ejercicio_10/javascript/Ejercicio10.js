@@ -11,10 +11,9 @@ class Converter {
 
       $.ajax({
         type: "GET",
-        url: objectReference.weatherApi,
+        url: objectReference.api,
         dataType: "json",
         success: function(json){
-
           console.log(json)
         }
     });
