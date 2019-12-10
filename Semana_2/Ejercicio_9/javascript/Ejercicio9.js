@@ -21,15 +21,15 @@ class WeatherGetter {
   getWeather() {
     var objectReference = this;
 
-    var http_request = new XMLHttpRequest();
-    http_request.open('GET', 'http://www.example.org/algun.archivo', true);
-    http_request.send(null)
-
-    http_request.onreadystatechange = function() {
-      if(http_request.status == 200 && http_request.readyState== 4) {
-        console.log(http_request.responseXML)
+    $.ajax({
+      type: "GET",
+      url: objectReference.weatherApi,
+      //data: paramsData,
+      dataType: "xml",
+      success: function(xml){
+        console.log(xml)
       }
-    }
+  });
 
     /*
     fetch(this.weatherApi)
