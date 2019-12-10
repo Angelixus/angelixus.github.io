@@ -35,11 +35,19 @@ class JQueryWrapper {
     $(parentId + " p:last").remove();
   }
 
-  showAllHTMLElements(parentToAppend) {
-    $('html').each(function() {
+  showAllHTMLElements(parentToAppend, currentTag) {
+    var current = $(currentTag)
+    var children = current.children()
+    if(children.length == 0) {
+      $(parentToAppend).append('<p> Elemento: ' + current.prev().prop('tagName') + ' Padre: ' + current.parent().prev().prop('tagName') + '</p>')
+    } else {
+      children.each(function() {
         var element = $(this)
-        $(parentToAppend).append('<p> Elemento: ' + element.prev().prop('tagName') + 'Padre: ' + element.parent().prev().prop('tagName') + '</p>')
-    })
+        $(parentToAppend).append('<p> Elemento: ' + element.prev().prop('tagName') + ' Padre: ' + element.parent().prev().prop('tagName') + '</p>')
+
+        showAllHTMLElements(parentToAppend, element.prev().prop('tagName'))
+      })
+    }
   }
 }
 
