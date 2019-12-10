@@ -5,8 +5,8 @@ class Converter {
 
   convert(inputId) {
     var eurVal = parseFloat($(inputId).val());
-
-    if (eurVal == NaN) {
+    
+    if (isNaN(eurVal)) {
       $("#eurInput").val("");
       $("#usdOut").val("");
       $("#audOut").val("");
