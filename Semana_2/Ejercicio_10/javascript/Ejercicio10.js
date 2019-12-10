@@ -6,7 +6,7 @@ class Converter {
   }
 
   convert(inputId) {
-    try {
+    //try {
       var eurVal = parseFloat($(inputId).val());
 
       $.ajax({
@@ -19,6 +19,8 @@ class Converter {
         }
     });
 
+    /*
+    
       fetch(this.api)
         .then(function(response) {
           let data = response.json();
@@ -39,6 +41,8 @@ class Converter {
       $("#plnOut").text("");
       $("#mxnOut").text("");
     }
+
+    */
   }
 }
 
