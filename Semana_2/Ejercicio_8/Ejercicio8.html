@@ -17,22 +17,38 @@
       <h1>Weather Info</h1>
     </header>
 
-    <section>
+    <main>
+      <section>
         <h2>Ciudad</h2>
-      <select id="citySelect">
-        <option value="london" selected onselect="londonGetter.showWeather()">Londres</option>
-        <option value="madrid" onselect="londonGetter.showWeather()">Madrid</option>
-        <option value="rome" onselect="londonGetter.showWeather()">Roma</option>
-        <option value="newyork" onselect="londonGetter.showWeather()">Nueva York</option>
-        <option value="tokyo" onselect="londonGetter.showWeather()">Tokyo</option>
-      </select>
-    </section>
-    <section>
-      <h2>Tiempo</h2>
-      <img class="weatherImage" src="icons/unknown.png" alt="Imagen representando el tiempo"/>
-      <p class="temperature-value">.º<span>C</span></p>
-      <p class="temperature-description">-</p>
-      <p class="place">-</p>
-    </section>
+        <select id="citySelect">
+          <option value="london" selected onselect="londonGetter.showWeather()"
+            >Londres</option
+          >
+          <option value="madrid" onselect="londonGetter.showWeather()"
+            >Madrid</option
+          >
+          <option value="rome" onselect="londonGetter.showWeather()"
+            >Roma</option
+          >
+          <option value="newyork" onselect="londonGetter.showWeather()"
+            >Nueva York</option
+          >
+          <option value="tokyo" onselect="londonGetter.showWeather()"
+            >Tokyo</option
+          >
+        </select>
+      </section>
+      <section>
+        <h2>Tiempo</h2>
+        <img
+          class="weatherImage"
+          src="icons/unknown.png"
+          alt="Imagen representando el tiempo"
+        />
+        <p class="temperature-value">.º<span>C</span></p>
+        <p class="temperature-description">-</p>
+        <p class="place">-</p>
+      </section>
+    </main>
   </body>
 </html>
