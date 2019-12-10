@@ -9,6 +9,16 @@ class Converter {
     try {
       var eurVal = parseFloat($(inputId).val());
 
+      $.ajax({
+        type: "GET",
+        url: objectReference.weatherApi,
+        dataType: "json",
+        success: function(json){
+
+          console.log(json)
+        }
+    });
+
       fetch(this.api)
         .then(function(response) {
           let data = response.json();

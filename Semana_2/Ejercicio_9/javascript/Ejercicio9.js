@@ -24,7 +24,6 @@ class WeatherGetter {
     $.ajax({
       type: "GET",
       url: objectReference.weatherApi,
-      //data: paramsData,
       dataType: "xml",
       success: function(xml){
         objectReference.temperature = Math.round(parseFloat(xml.getElementsByTagName('temperature')[0].getAttribute('value')))
