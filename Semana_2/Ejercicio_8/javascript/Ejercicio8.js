@@ -23,18 +23,21 @@ class WeatherGetter {
       var localDesc = "";
       var localIconId = "";
 
+      /*
       var http_request = new XMLHttpRequest()
       http_request.open('GET', this.weatherApi, true);
+      http_request.send(null)
       http_request.onreadystatechange = function() {
-        if(xhr.readyState === XMLHttpRequest.DONE) {
+        if(xhr.readyState === XMLHttpRequest.DONE && http_request.status == 200) {
             console.log(xhr.responseText);
         }
       }
-
+*/
       
       fetch(this.weatherApi)
         .then(function(response) {
             let data = response.json();
+            console.log(data)
             return data;
         })
         .then(function(data) {
