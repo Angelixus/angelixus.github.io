@@ -27,7 +27,21 @@ class WeatherGetter {
       //data: paramsData,
       dataType: "xml",
       success: function(xml){
-        console.log(typeof xml)
+        objectReference.temperature = Math.round(parseFloat(xml.getElementsByTagName('temperature').getAttribute('value')))
+        objectReference.description = xml.getElementsByTagName('weather').getAttribute('value')
+        objectReference.iconId = xml.getElementsByTagName('weather').getAttribute('icon')
+        objectReference.cityCountry = xml.getElementsByTagName('city').getAttribute('name') + ', ' + xml.getElementsByTagName('country')
+
+        var selectedName = "";
+        $("#citySelect > option").each(function() {
+          if ($(this).prop("selected") == true) {
+            selectedName = $(this).prop("value");
+          }
+        });
+
+        if (selectedName == objectReference.optionName) {
+          objectReference.showWeather();
+        }
       }
   });
 
@@ -55,7 +69,8 @@ class WeatherGetter {
           objectReference.showWeather();
         }
       });
-      */  
+      */
+       
   }
 
   showWeather() {
