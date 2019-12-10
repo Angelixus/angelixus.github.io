@@ -29,6 +29,9 @@ h2, p {
     text-align: center;
 }
 
-select, ing {
-    align-content: center;
+select, img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
