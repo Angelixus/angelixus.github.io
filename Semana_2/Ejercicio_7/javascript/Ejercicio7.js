@@ -50,8 +50,7 @@ class JQueryWrapper {
     var rowsAccum = 0;
     $(tableToAdd + ' > tbody  > tr').each(function() {
       $(this).find('td').each(function() {
-        console.log($(this).val())
-        rowsAccum += parseInt($(this).val(), 10)
+        rowsAccum += parseInt($(this).text(), 10)
       }) 
     })
 
