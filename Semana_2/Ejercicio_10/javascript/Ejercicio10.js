@@ -5,11 +5,10 @@ class Converter {
     this.htmlwrapper = htmlwrapper;
   }
 
-  convert(inputVal) {
+  convert(inputId) {
     try {
-      var eurVal = parseFloat(this.htmlwrapper.readFromHtml(inputVal));
+      var eurVal = parseFloat($(inputId).val());
 
-      var objectReference = this;
       fetch(this.api)
         .then(function(response) {
           let data = response.json();
@@ -33,16 +32,4 @@ class Converter {
   }
 }
 
-class HtmlWrapper {
-  constructor() {}
-
-  writeToHTML(id, toWrite) {
-    document.getElementById(id).value = toWrite;
-  }
-
-  readFromHtml(id) {
-    return document.getElementById(id).value;
-  }
-}
-
-var converter = new Converter(new HtmlWrapper());
+var converter = new Converter();
