@@ -37,10 +37,10 @@ class WeatherGetter {
       fetch(this.weatherApi)
         .then(function(response) {
             let data = response.json();
-            console.log(data)
             return data;
         })
         .then(function(data) {
+            console.log(data)
             localTemp = Math.floor(data.main.temp);
             localDesc = data.weather[0].description;
             localIconId = data.weather[0].icon;
