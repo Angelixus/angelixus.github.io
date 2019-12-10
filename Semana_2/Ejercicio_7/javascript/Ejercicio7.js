@@ -56,7 +56,7 @@ class JQueryWrapper {
 
     var colAccum = 0;
     $(tableToAdd + ' > tbody  > tr > td').each(function(index) {
-      colAccum += parseInt($(this).text, 10)
+      colAccum += parseInt($(this).text(), 10)
     })
 
     $(whereToShowRes).append('<p> Suma por filas: ' + rowsAccum.toString() + '</p>')
