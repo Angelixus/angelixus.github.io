@@ -8,7 +8,7 @@ class WeatherGetter {
     this.description = "";
     this.iconId = "";
     this.cityCountry = "";
-    this.optionName = optionName
+    this.optionName = optionName;
 
     this.weatherApi =
       "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -49,7 +49,7 @@ class WeatherGetter {
 
   showWeather() {
     $(".weatherImage").attr("src", "icons/" + this.iconId + ".png");
-    $(".temperature-value").text(this.temperature.toString() + 'ºC');
+    $(".temperature-value").text(this.temperature.toString() + "ºC");
     $(".temperature-description").text(this.description);
     $(".place").text(this.cityCountry);
   }
@@ -60,3 +60,23 @@ var tokyoGetter = new WeatherGetter("tokyo", 35.6828, 139.759);
 var romeGetter = new WeatherGetter("rome", 41.8933, 12.4829);
 var madridGetter = new WeatherGetter("madrid", 40.4167, -3.7036);
 var newyorkGetter = new WeatherGetter("newyork", 40.7306, -73.9867);
+
+$("#citySelect").change(function() {
+  if ($(this).prop("value") == "london") {
+    londonGetter.showWeather();
+  }
+  if ($(this).prop("value") == "madrid") {
+    madridGetter.showWeather();
+  }
+
+  if ($(this).prop("value") == "rome") {
+    romeGetter.showWeather();
+  }
+  if ($(this).prop("value") == "newyork") {
+    newyorkGetter.showWeather();
+  }
+
+  if ($(this).prop("value") == "tokyo") {
+    tokyoGetter.showWeather();
+  }
+});
