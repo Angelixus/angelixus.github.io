@@ -37,7 +37,7 @@ class JQueryWrapper {
 
   showAllHTMLElements(parentToAppend) {
     $('html').find('*').each(function() {
-      $(parentToAppend).append('<p>Elemento: ' + this.nodeName + ' Padre: ' + this.parent().nodeName + '</p>')
+      $(parentToAppend).append('<p>Elemento: ' + this.nodeName + ' Padre: ' + $(this).parent().nodeName + '</p>')
       alert(this.nodeName);
     })
   }
