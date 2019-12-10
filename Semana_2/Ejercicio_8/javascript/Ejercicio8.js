@@ -30,7 +30,7 @@ class WeatherGetter {
             objectReference.description = data.weather[0].description;
             objectReference.iconId = data.weather[0].icon;
         }).then(function() {
-            var selectedName
+            var selectedName = ""
             $('#citySelect > option').each(function() {
                 var propName = $(this).prop('value')
                 var selected = $(this).prop('selected')
