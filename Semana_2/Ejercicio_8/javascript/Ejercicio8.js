@@ -66,23 +66,24 @@ class LocationManager {
   }
 
   initializeListeners() {
+      var objectReference = this;
     $("#citySelect").change(function() {
       if ($(this).prop("value") == "london") {
-        london.showWeather();
+        objectReference.london.showWeather();
       }
       if ($(this).prop("value") == "madrid") {
-        madrid.showWeather();
+        objectReference.madrid.showWeather();
       }
 
       if ($(this).prop("value") == "rome") {
-        rome.showWeather();
+        objectReference.rome.showWeather();
       }
       if ($(this).prop("value") == "newyork") {
-        newyork.showWeather();
+        objectReference.newyork.showWeather();
       }
 
       if ($(this).prop("value") == "tokyo") {
-        tokyo.showWeather();
+        objectReference.tokyo.showWeather();
       }
     });
   }
