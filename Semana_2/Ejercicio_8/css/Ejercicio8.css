@@ -23,5 +23,12 @@ section {
     border-radius: 10px;
     padding-bottom : 50px;
 
+}
+
+h2, p {
+    text-align: center;
+}
+
+select, ing {
     align-content: center;
 }
