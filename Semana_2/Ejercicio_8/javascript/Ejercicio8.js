@@ -67,7 +67,7 @@ class LocationManager {
 
   initializeListeners() {
       var objectReference = this;
-    $("#citySelect").on('change', function() {
+    $("#citySelect").on('input', function() {
         console.log('HI')
       if ($(this).prop("value") == "london") {
         objectReference.london.showWeather();
