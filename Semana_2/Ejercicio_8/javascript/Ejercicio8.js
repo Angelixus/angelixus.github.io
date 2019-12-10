@@ -1,5 +1,3 @@
-const KELVIN = 273;
-
 class WeatherGetter {
   constructor(optionName, lat, long) {
     this.lat = lat;
