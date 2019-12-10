@@ -33,27 +33,21 @@ class WeatherGetter {
         }
       }
 */
-      
+      var objectReference = this;
       fetch(this.weatherApi)
         .then(function(response) {
             let data = response.json();
             return data;
         })
         .then(function(data) {
-            localTemp = Math.floor(data.main.temp);
-            localDesc = data.weather[0].description;
-            localIconId = data.weather[0].icon;
+            objectReference.temperature = Math.floor(data.main.temp);
+            objectReference.description = data.weather[0].description;
+            objectReference.iconId = data.weather[0].icon;
         })
-
-        console.log(localTemp)
-
-        this.temperature = localTemp;
-        this.description = localDesc;
-        this.iconId = localIconId;
   }
 
   showWeather() {
-
+    
   }
 }
 
