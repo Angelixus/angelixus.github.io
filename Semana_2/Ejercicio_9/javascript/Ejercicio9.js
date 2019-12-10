@@ -27,10 +27,10 @@ class WeatherGetter {
       //data: paramsData,
       dataType: "xml",
       success: function(xml){
-        objectReference.temperature = Math.round(parseFloat(xml.getElementsByTagName('temperature').getAttribute('value')))
-        objectReference.description = xml.getElementsByTagName('weather').getAttribute('value')
-        objectReference.iconId = xml.getElementsByTagName('weather').getAttribute('icon')
-        objectReference.cityCountry = xml.getElementsByTagName('city').getAttribute('name') + ', ' + xml.getElementsByTagName('country')
+        objectReference.temperature = Math.round(parseFloat(xml.getElementsByTagName('temperature')[0].getAttribute('value')))
+        objectReference.description = xml.getElementsByTagName('weather')[0].getAttribute('value')
+        objectReference.iconId = xml.getElementsByTagName('weather')[0].getAttribute('icon')
+        objectReference.cityCountry = xml.getElementsByTagName('city')[0].getAttribute('name') + ', ' + xml.getElementsByTagName('country')[0].nodeValue
 
         var selectedName = "";
         $("#citySelect > option").each(function() {
