@@ -12,7 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\Semana_2\\Ejercicio_7\\javascript\\Ejercicio7.js"
+            "program": "${workspaceFolder}\\Semana_2\\Ejercicio_8\\javascript\\Ejercicio8.js"
         }
     ]
 }

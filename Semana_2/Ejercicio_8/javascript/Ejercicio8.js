@@ -22,6 +22,16 @@ class WeatherGetter {
       var localTemp = 0;
       var localDesc = "";
       var localIconId = "";
+
+      var http_request = new XMLHttpRequest()
+      http_request.open('GET', this.weatherApi, true);
+      http_request.onreadystatechange = function() {
+        if(xhr.readyState === XMLHttpRequest.DONE) {
+            console.log(xhr.responseText);
+        }
+      }
+
+      
       fetch(this.weatherApi)
         .then(function(response) {
             let data = response.json();
