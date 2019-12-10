@@ -18,6 +18,11 @@ class JQueryWrapper {
             this.show(id)
         }
     }
+
+    addRow(tableId, inputToTakeInfo) {
+        var toAdd = document.getElementById(inputToTakeInfo).value
+            $(tableId).append('<tr><td>' + toAdd + '</td></tr>');
+    }
 }
 
 jqueryWrapper = new JQueryWrapper()
