@@ -20,11 +20,11 @@ class Converter {
         url: objectReference.api,
         dataType: "json",
         success: function(json) {
-          $("#usdOut").val(eurVal * json.rates.USD);
-          $("#audOut").val(eurVal * json.rates.AUD);
-          $("#cadOut").val(eurVal * json.rates.CAD);
-          $("#plnOut").val(eurVal * json.rates.PLN);
-          $("#mxnOut").val(eurVal * json.rates.MXN);
+          $("#usdOut").val((eurVal * json.rates.USD).toFixed(2));
+          $("#audOut").val((eurVal * json.rates.AUD).toFixed(2));
+          $("#cadOut").val((eurVal * json.rates.CAD).toFixed(2));
+          $("#plnOut").val((eurVal * json.rates.PLN).toFixed(2));
+          $("#mxnOut").val((eurVal * json.rates.MXN).toFixed(2));
         }
       });
     }
