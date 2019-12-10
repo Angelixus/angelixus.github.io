@@ -46,7 +46,7 @@ class WeatherGetter {
   }
 
   showWeather() {
-    console.log(this.cityCountry)
+    console.log(this.cityCountry);
 
     $(".weatherImage").attr("src", "icons/" + this.iconId + ".png");
     $(".temperature-value").text(this.temperature.toString() + "ºC");
@@ -66,26 +66,28 @@ class LocationManager {
   }
 
   initializeListeners() {
-      var objectReference = this;
-    $("#citySelect").on('input', function() {
-        console.log('HI')
-      if ($(this).prop("value") == "london") {
-        objectReference.london.showWeather();
-      }
-      if ($(this).prop("value") == "madrid") {
-        objectReference.madrid.showWeather();
-      }
+    var objectReference = this;
+    $(document).ready(function() {
+      $("#citySelect").on("change", function() {
+        console.log("HI");
+        if ($(this).prop("value") == "london") {
+          objectReference.london.showWeather();
+        }
+        if ($(this).prop("value") == "madrid") {
+          objectReference.madrid.showWeather();
+        }
 
-      if ($(this).prop("value") == "rome") {
-        objectReference.rome.showWeather();
-      }
-      if ($(this).prop("value") == "newyork") {
-        objectReference.newyork.showWeather();
-      }
+        if ($(this).prop("value") == "rome") {
+          objectReference.rome.showWeather();
+        }
+        if ($(this).prop("value") == "newyork") {
+          objectReference.newyork.showWeather();
+        }
 
-      if ($(this).prop("value") == "tokyo") {
-        objectReference.tokyo.showWeather();
-      }
+        if ($(this).prop("value") == "tokyo") {
+          objectReference.tokyo.showWeather();
+        }
+      });
     });
   }
 }
