@@ -46,6 +46,8 @@ class WeatherGetter {
   }
 
   showWeather() {
+    console.log(this.cityCountry)
+
     $(".weatherImage").attr("src", "icons/" + this.iconId + ".png");
     $(".temperature-value").text(this.temperature.toString() + "ºC");
     $(".temperature-description").text(this.description);
