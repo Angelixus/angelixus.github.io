@@ -1,7 +1,7 @@
 const KELVIN = 273;
 
 class WeatherGetter {
-  constructor(lat, long) {
+  constructor(optionName, lat, long) {
     this.lat = lat;
     this.long = long;
     this.temperature = 0;
@@ -19,20 +19,6 @@ class WeatherGetter {
   }
 
   getWeather() {
-      var localTemp = 0;
-      var localDesc = "";
-      var localIconId = "";
-
-      /*
-      var http_request = new XMLHttpRequest()
-      http_request.open('GET', this.weatherApi, true);
-      http_request.send(null)
-      http_request.onreadystatechange = function() {
-        if(xhr.readyState === XMLHttpRequest.DONE && http_request.status == 200) {
-            console.log(xhr.responseText);
-        }
-      }
-*/
       var objectReference = this;
       fetch(this.weatherApi)
         .then(function(response) {
@@ -41,9 +27,11 @@ class WeatherGetter {
         })
         .then(function(data) {
             objectReference.temperature = Math.round(data.main.temp);
-            console.log(data)
             objectReference.description = data.weather[0].description;
             objectReference.iconId = data.weather[0].icon;
+        }).then(function() {
+            console.log($('#citySelect > option').prop('value'))
+            objectReference.showWeather()
         })
   }
 
@@ -52,8 +40,8 @@ class WeatherGetter {
   }
 }
 
-var londonGetter = new WeatherGetter(51.5085, -0.1258);
-var tokyoGetter = new WeatherGetter(35.6828, 139.759);
-var romeGetter = new WeatherGetter(41.8933, 12.4829);
-var madridGetter = new WeatherGetter(40.4167, -3.7036);
-var newyorkGetter = new WeatherGetter(40.7306, -73.9867);
+var londonGetter = new WeatherGetter('london', 51.5085, -0.1258);
+var tokyoGetter = new WeatherGetter('tokyo', 35.6828, 139.759);
+var romeGetter = new WeatherGetter('rome', 41.8933, 12.4829);
+var madridGetter = new WeatherGetter('madrid', 40.4167, -3.7036);
+var newyorkGetter = new WeatherGetter('newyork', 40.7306, -73.9867);
