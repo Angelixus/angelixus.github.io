@@ -18,16 +18,45 @@
     </header>
 
     <section>
-      <h2>Vamos a ocultar y mostrar</h2>
+      <h2>Ocultar/Mostrar Parrafos</h2>
       <p id="hideShowP">
         Ocultame apretando al boton que dice "ocultar", muestrame apretando al
         boton que dice "mostrar"
       </p>
-      <button type="button" onclick="jqueryWrapper.hide('#hideShowP')">Ocultar</button>
-      <button type="button" onclick="jqueryWrapper.show('#hideShowP')">Mostrar</button>
+      <button type="button" onclick="jqueryWrapper.hide('#hideShowP')">
+        Ocultar
+      </button>
+      <button type="button" onclick="jqueryWrapper.show('#hideShowP')">
+        Mostrar
+      </button>
     </section>
     <section>
-      <h2>Vamos a mostrar</h2>
+      <h2>Ocultar/Mostrar Tablas</h2>
+      <p>Prueba a ocultar o mostrar toda la tabla con los siguientes botones</p>
+      <button type="button" onclick="jqueryWrapper.hide('#hideShowTable')">
+            Ocultar
+          </button>
+          <button type="button" onclick="jqueryWrapper.show('#hideShowTable')">
+            Mostrar
+          </button>
+      <table id="hideShowTable">
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+      </table>
     </section>
   </body>
 </html>
