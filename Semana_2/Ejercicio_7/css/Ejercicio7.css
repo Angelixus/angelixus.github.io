@@ -10,3 +10,8 @@ h1 {
     text-transform: uppercase;
     background-color: black;
 }
+
+section {
+    border-style: solid;
+    border-color: black;
+}
