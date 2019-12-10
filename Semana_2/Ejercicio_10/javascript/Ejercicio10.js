@@ -4,8 +4,16 @@ class Converter {
   }
 
   convert(inputId) {
-    try {
-      var eurVal = parseFloat($(inputId).val());
+    var eurVal = parseFloat($(inputId).val());
+
+    if (eurVal == NaN) {
+      $("#eurInput").val("");
+      $("#usdOut").val("");
+      $("#audOut").val("");
+      $("#cadOut").val("");
+      $("#plnOut").val("");
+      $("#mxnOut").val("");
+    } else {
       var objectReference = this;
 
       $.ajax({
@@ -19,13 +27,6 @@ class Converter {
           $("#mxnOut").val(eurVal * json.rates.MXN);
         }
       });
-    } catch (e) {
-      $("#eurInput").val("");
-      $("#usdOut").val("");
-      $("#audOut").val("");
-      $("#cadOut").val("");
-      $("#plnOut").val("");
-      $("#mxnOut").val("");
     }
   }
 }
