@@ -40,6 +40,7 @@ class WeatherGetter {
           }
         });
 
+        console.log(objectReference.optionName)
         console.log(selectedName)
         if (selectedName == objectReference.optionName) {
           objectReference.showWeather();
