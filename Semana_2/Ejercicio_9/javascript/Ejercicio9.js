@@ -30,10 +30,7 @@ class WeatherGetter {
         objectReference.temperature = Math.round(parseFloat(xml.getElementsByTagName('temperature')[0].getAttribute('value')))
         objectReference.description = xml.getElementsByTagName('weather')[0].getAttribute('value')
         objectReference.iconId = xml.getElementsByTagName('weather')[0].getAttribute('icon')
-        objectReference.cityCountry = xml.getElementsByTagName('city')[0].getAttribute('name') + ', ' + xml.getElementsByTagName('country')[0].nodeValue
-        console.log(xml.getElementsByTagName('country')[0])
-        console.log(xml.getElementsByTagName('country')[0].nodeValue)
-        console.log(xml.getElementsByTagName('country')[0].firstChild.nodeValue)
+        objectReference.cityCountry = xml.getElementsByTagName('city')[0].getAttribute('name') + ', ' + xml.getElementsByTagName('country')[0].firstChild.nodeValue
 
         var selectedName = "";
         $("#citySelect > option").each(function() {
