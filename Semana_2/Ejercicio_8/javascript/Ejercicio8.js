@@ -41,6 +41,7 @@ class WeatherGetter {
         })
         .then(function(data) {
             objectReference.temperature = Math.round(data.main.temp);
+            console.log(data)
             objectReference.description = data.weather[0].description;
             objectReference.iconId = data.weather[0].icon;
         })
