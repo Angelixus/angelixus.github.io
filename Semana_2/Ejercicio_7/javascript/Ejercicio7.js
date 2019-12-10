@@ -37,8 +37,12 @@ class JQueryWrapper {
 
   showAllHTMLElements(parentToAppend) {
     $('html').find('*').each(function() {
-      console.log($(this).parent())
-      $(parentToAppend).append('<p>Elemento: ' + this.nodeName + ' Padre: ' + $(this).parent().nodeName + '</p>')
+      parentTag = $(this).parent().prev().prop('tagName')
+      if(parentTag == undefined) {
+        $(parentToAppend).append('<p>Elemento: ' + $(this).prev().prop('tagName') + ' Padre: No Tiene' + '</p>')
+      } else {
+        $(parentToAppend).append('<p>Elemento: ' + $(this).prev().prop('tagName') + ' Padre: ' + $(this).parent().prev().prop('tagName') + '</p>')
+      }
     })
   }
 }
