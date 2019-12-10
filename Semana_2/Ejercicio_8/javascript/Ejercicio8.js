@@ -7,6 +7,7 @@ class WeatherGetter {
     this.temperature = 0;
     this.description = "";
     this.iconId = "";
+    this.cityCountry = "";
 
     this.weatherApi =
       "https://api.openweathermap.org/data/2.5/weather?lat=" +
@@ -29,20 +30,26 @@ class WeatherGetter {
             objectReference.temperature = Math.round(data.main.temp);
             objectReference.description = data.weather[0].description;
             objectReference.iconId = data.weather[0].icon;
+            objectReference.cityCountry = data.name + ',' + data.sys.country;
         }).then(function() {
             var selectedName = ""
             $('#citySelect > option').each(function() {
-                var propName = $(this).prop('value')
-                var selected = $(this).prop('selected')
-                console.log(propName)
-                console.log(selected)
+                if($(this).prop('selected') == true) {
+                    selectedName = $(this).prop('value')
+                }
             })
-            objectReference.showWeather()
+
+            if(selectedName == objectReference.optionName) {
+                objectReference.showWeather()
+            }
         })
   }
 
   showWeather() {
-    
+    $('.weatherImage').attr('src', 'icons/' + this.iconId + '.png')
+    $('.temperature-value').text(this.temperature.toString())
+    $('.temperature-description').text(this.description)
+    $('.place').text(this.cityCountry)
   }
 }
 
