@@ -10,7 +10,6 @@ class Converter {
       var objectReference = this;
 
       $.ajax({
-        type: "GET",
         url: objectReference.api,
         dataType: "json",
         success: function(json){
