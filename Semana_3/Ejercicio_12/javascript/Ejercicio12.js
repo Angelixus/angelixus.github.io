@@ -34,6 +34,9 @@ class GeoLocalizacion {
 
           $("#latitudeP").text("Latitud: " + objectReference.lat.toString());
           $("#longitudeP").text("Longitud: " + objectReference.long.toString());
+          $('body').append('<section id="staticMap"></section>')
+          $('#staticMap').append('<h2>Mapa estático de la zona</h2>')
+          $('#staticMap').append('<img src=' + objectReference.googleStaticApi + ' alt="Mapa de la zona donde esta el usuario"/>')
         },
         function(error) {
           if (error.code == 1) {
