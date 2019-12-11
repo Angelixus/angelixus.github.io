@@ -9,7 +9,7 @@ class GeoLocalizacion {
   }
 
   initMap() {
-    var src = '../archivos/1.kml'
+    var src = 'https://angelixus.github.io/Semana_3/Ejercicio_14/archivos/1.kml'
     var pos = { lat: 43.027502, lng: -6.246995 };
     var map = new google.maps.Map(document.getElementById("actualMap"), {
       center: pos,
