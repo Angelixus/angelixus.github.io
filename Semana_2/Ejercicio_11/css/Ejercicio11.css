@@ -32,6 +32,8 @@ h2, p {
 h2 {
     padding: 10px;
     margin: 10px;
+
+    color: white;
 }
 
 select, img {
