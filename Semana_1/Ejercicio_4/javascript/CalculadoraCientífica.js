@@ -55,7 +55,7 @@ var basicCalcPrototype = {
     }
 
     if(areValid) {
-      scientificCalc.memory = eval(scientificCalc.memory + '-' + scientificCalc.expression)
+      scientificCalc.memory = eval(scientificCalc.memory + '-' + scientificCalc.expression).toString()
       scientificCalc.expression = scientificCalc.memory.toString();
     }
     this.showValueOnInput("numberShow", scientificCalc.expression);
