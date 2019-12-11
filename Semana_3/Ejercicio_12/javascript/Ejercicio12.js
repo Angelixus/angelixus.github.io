@@ -3,7 +3,12 @@ class GeoLocalizacion {
     this.lat = 0;
     this.long = 0;
 
-    this.getUserPos();
+    this.googleStaticApi = "";
+
+    objectReference = this;
+    window.onload = function() {
+        objectReference.getUserPos();
+    }
   }
 
   getUserPos() {
@@ -15,6 +20,17 @@ class GeoLocalizacion {
 
           objectReference.lat = position.coords.latitude;
           objectReference.long = position.coords.longitude;
+
+          objectReference.googleStaticApi =
+            "https://maps.googleapis.com/maps/api/staticmap?center=" +
+            objectReference.lat +
+            "," +
+            objectReference.long +
+            "&zoom=13&size=600x300&maptype=roadmap&markers=" +
+            objectReference.lat +
+            "," +
+            objectReference.long +
+            "&key=AIzaSyD7OJDcBX1deML4CVeVh6xgQZX4itIMrOM";
 
           $("#latitudeP").text("Latitud: " + objectReference.lat.toString());
           $("#longitudeP").text("Longitud: " + objectReference.long.toString());
