@@ -1,5 +1,7 @@
 class GeoLocalizacion {
     constructor() {
+        console.log(navigator)
+        console.log(navigator.geolocation)
         this,geolocation = navigator.geolocation;
         this.lat = 0;
         this.long = 0;
