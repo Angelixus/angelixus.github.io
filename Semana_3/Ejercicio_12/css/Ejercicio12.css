@@ -16,3 +16,7 @@ section {
 #dynamicMap, #freeApp {
     height: 900px;
 }
+
+button {
+    font-weight: bolder;
+}
