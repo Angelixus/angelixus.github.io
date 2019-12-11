@@ -39,6 +39,8 @@ class GeoLocalizacion {
               objectReference.googleStaticApi +
               ' alt="Mapa de la zona donde esta el usuario"/>'
           );
+
+          objectReference.initMap();
         },
         function(error) {
           if (error.code == 1) {
