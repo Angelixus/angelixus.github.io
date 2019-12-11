@@ -40,7 +40,6 @@ class GeoLocalizacion {
               ' alt="Mapa de la zona donde esta el usuario"/>'
           );
 
-          objectReference.initMap();
         },
         function(error) {
           if (error.code == 1) {
@@ -54,16 +53,16 @@ class GeoLocalizacion {
       alert("La geolocalización no esta disponible en este navegador");
     }
   }
+}
 
-  initMap() {
+function initMap() {
     var pos = {lat: this.lat, lng: this.long};
-    var map = new google.maps.Map(document.getElementById("mainBody"), {
+    var map = new google.maps.Map(document.getElementById("dynamicMap"), {
       center: pos,
       zoom: 8
     });
 
     var marker = new google.maps.Marker({position: pos, map: map})
-  }
 }
 
 var geolocation = new GeoLocalizacion();
