@@ -1,8 +1,9 @@
 class GeoLocalizacion {
     constructor() {
-        this.geolocation = navigator.geolocation;
         this.lat = 0;
         this.long = 0;
+
+        this.getUserPos()
     }
 
     getUserPos() {
