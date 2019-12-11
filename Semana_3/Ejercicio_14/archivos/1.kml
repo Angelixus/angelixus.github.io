@@ -4,16 +4,13 @@
     <name>Rutas</name>
     <description>Practica de XML, transformacion a KML</description>
     <Style id="linearoja">
-      <IconStyle>
-        <Icon>
-          <href>
-        https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png
-          </href>
-        </Icon>
-      </IconStyle>
-      <BalloonStyle>
-        <text>$[video]</text>
-      </BalloonStyle>
+      <LineStyle>
+        <color>#ff0000</color>
+        <width>5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>#ff0000</color>
+      </PolyStyle>
     </Style>
     <Placemark>
       <name>Relieve absoluto</name>
@@ -24,36 +21,10 @@
         <tessellate>1</tessellate>
         <altitudeMode>absoluto</altitudeMode>
         <coordinates>
-          -6.246995,43.027502,1477
-        </coordinates>
-      </LineString>
-    </Placemark>
-
-    <Placemark>
-      <name>Relieve absoluto</name>
-      <description>Pared verde transparente con contornos amarillos</description>
-      <styleurl>#linearoja</styleurl>
-      <LineString>
-        <extrude>1</extrude>
-        <tessellate>1</tessellate>
-        <altitudeMode>absoluto</altitudeMode>
-        <coordinates>
-          -6.297293,43.030056,1853
-        </coordinates>
-      </LineString>
-    </Placemark>
-
-    <Placemark>
-      <name>Relieve absoluto</name>
-      <description>Pared verde transparente con contornos amarillos</description>
-      <styleurl>#linearoja</styleurl>
-      <LineString>
-        <extrude>1</extrude>
-        <tessellate>1</tessellate>
-        <altitudeMode>absoluto</altitudeMode>
-        <coordinates>
-          -6.303828,43.028954,1972
-        </coordinates>
+-6.246995,43.027502,1477
+-6.297293,43.030056,1853
+-6.303828,43.028954,1972
+</coordinates>
       </LineString>
     </Placemark>
   </Document>
