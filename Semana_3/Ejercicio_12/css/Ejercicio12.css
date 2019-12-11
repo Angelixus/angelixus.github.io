@@ -13,6 +13,6 @@ section {
     padding: 10px;
 }
 
-#dynamicMap {
+#dynamicMap, #freeApp {
     height: 900px;
 }
