@@ -4,7 +4,7 @@ class FileInfoShow {
   }
 
   readFiles(eventObject) {
-    
+    console.log(eventObject)
   }
 }
 
