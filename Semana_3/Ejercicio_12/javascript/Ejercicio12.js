@@ -5,7 +5,7 @@ class GeoLocalizacion {
 
     this.googleStaticApi = "";
 
-    objectReference = this;
+    var objectReference = this;
     window.onload = function() {
         objectReference.getUserPos();
     }
