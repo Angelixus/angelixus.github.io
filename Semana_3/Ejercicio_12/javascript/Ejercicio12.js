@@ -22,3 +22,5 @@ class GeoLocalizacion {
         })
     }
 }
+
+var gelocation = new GeoLocalizacion()
