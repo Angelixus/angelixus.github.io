@@ -9,7 +9,7 @@ class GeoLocalizacion {
   }
 
   initMap() {
-    var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml'
+    var src = '../archivos/1.kml'
     var pos = { lat: 43.027502, lng: -6.246995 };
     var map = new google.maps.Map(document.getElementById("actualMap"), {
       center: pos,
