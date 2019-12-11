@@ -2,8 +2,10 @@ class GeoLocalizacion {
   constructor() {
     this.googleStaticApi = "";
 
-    this.initMap();
-    
+    var objectReference = this;
+    window.onload = function() {
+      objectReference.initMap()
+    }    
   }
 
   initMap() {
