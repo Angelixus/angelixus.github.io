@@ -6,9 +6,11 @@ class GeoLocalizacion {
     }
 
     getUserPos() {
-        var objectReference = this;
-
-        navigator.geolocation.getCurrentPosition(this.locationGetSuccess, this.locationGetError)
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.locationGetSuccess, this.locationGetError)
+        } else {
+            alert("La geolocalización no esta disponible en este navegador");
+        }
     }
 
     locationGetSuccess(position) {
