@@ -2,7 +2,7 @@ class GeoLocalizacion {
   constructor() {
     this.googleStaticApi = "";
 
-    initMap();
+    this.initMap();
     
   }
 
