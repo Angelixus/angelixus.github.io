@@ -8,7 +8,7 @@ class HTMLWriter {
         console.log(this.tagId);
         var htmlTag = document.getElementById(this.tagId);
         if(htmlTag != null) {
-            htmlTag.textContent += this.toWrite;
+            htmlTag.textContent = this.toWrite;
         }
     }
 
