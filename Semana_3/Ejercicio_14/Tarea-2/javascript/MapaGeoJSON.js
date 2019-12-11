@@ -9,7 +9,7 @@ class GeoLocalizacion {
   }
 
   initMap() {
-    var src = 'https://angelixus.github.io/Semana_3/Ejercicio_14/Tarea-2/archivos/1.json'
+    var src = 'https://angelixus.github.io/Semana_3/Ejercicio_14/Tarea-2/archivos/rutas.GeoJSON'
     var pos = { lat: 43.027502, lng: -6.246995 };
     var map = new google.maps.Map(document.getElementById("actualMap"), {
       center: pos,
