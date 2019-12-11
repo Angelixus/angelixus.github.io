@@ -13,7 +13,7 @@ class GeoLocalizacion {
     var pos = { lat: 43.027502, lng: -6.246995 };
     var map = new google.maps.Map(document.getElementById("actualMap"), {
       center: pos,
-      zoom: 8,
+      zoom: 16,
     });
 
     var kmlLayer = new google.maps.KmlLayer(src, {
