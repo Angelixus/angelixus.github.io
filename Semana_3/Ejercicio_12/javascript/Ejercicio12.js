@@ -7,7 +7,7 @@ class GeoLocalizacion {
 
     getUserPos() {
         var objectReference = this;
-        this.geolocation.getCurrentPosition(function(position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             alert('Localización obtenida satisfactoriamente')
 
             objectReference.lat = position.coords.latitude;
