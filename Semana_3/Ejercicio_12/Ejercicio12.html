@@ -10,17 +10,30 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="javascript/Ejercicio12.js"></script>
   </head>
-  <body id="mainBody">
-      <header>
-          <h1>Geolocalizacion</h1>
-      </header>
+  <body>
+    <header>
+      <h1>Geolocalizacion</h1>
+    </header>
     <section id="userLocation">
-        <h2>Latitud y longitud del usuario</h2>
-        <p>A continuacion se mostraran la latitud y longitud del usuario si estan disponibles</p>
-        <p id="latitudeP">Latitud: -</p>
-        <p id="longitudeP">longitud: -</p>
+      <h2>Latitud y longitud del usuario</h2>
+      <p>
+        A continuacion se mostraran la latitud y longitud del usuario si estan
+        disponibles
+      </p>
+      <p id="latitudeP">Latitud: -</p>
+      <p id="longitudeP">longitud: -</p>
     </section>
+    <section id="staticMap">
+      <h2>Mapa estático de la zona</h2>
+    </section>
+    <section id="mapaDinamico"></section>
+    
+    <script src="javascript/Ejercicio12.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU&amp;callback=initMap"
+      async=""
+      defer=""
+    ></script>
   </body>
 </html>

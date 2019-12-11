@@ -7,8 +7,8 @@ class GeoLocalizacion {
 
     var objectReference = this;
     window.onload = function() {
-        objectReference.getUserPos();
-    }
+      objectReference.getUserPos();
+    };
   }
 
   getUserPos() {
@@ -34,9 +34,11 @@ class GeoLocalizacion {
 
           $("#latitudeP").text("Latitud: " + objectReference.lat.toString());
           $("#longitudeP").text("Longitud: " + objectReference.long.toString());
-          $('#mainBody').append('<section id="staticMap"></section>')
-          $('#staticMap').append('<h2>Mapa estático de la zona</h2>')
-          $('#staticMap').append('<img src=' + objectReference.googleStaticApi + ' alt="Mapa de la zona donde esta el usuario"/>')
+          $("#staticMap").append(
+            "<img src=" +
+              objectReference.googleStaticApi +
+              ' alt="Mapa de la zona donde esta el usuario"/>'
+          );
         },
         function(error) {
           if (error.code == 1) {
@@ -49,6 +51,14 @@ class GeoLocalizacion {
     } else {
       alert("La geolocalización no esta disponible en este navegador");
     }
+  }
+
+  initMap() {
+    var objectReference = this;
+    var map = new google.maps.Map(document.getElementById("dynamicMap"), {
+      center: { lat: objectReference.lat, lng: objectReference.long },
+      zoom: 8
+    });
   }
 }
 
