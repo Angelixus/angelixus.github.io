@@ -81,20 +81,25 @@ class LocationManager {
       $("#citySelect").on("change", function() {
         if ($(this).prop("value") == "london") {
           objectReference.london.showWeather();
+          objectReference.london.initMap();
         }
         if ($(this).prop("value") == "madrid") {
           objectReference.madrid.showWeather();
+          objectReference.madrid.initMap();
         }
 
         if ($(this).prop("value") == "rome") {
           objectReference.rome.showWeather();
+          objectReference.rome.initMap();
         }
         if ($(this).prop("value") == "newyork") {
           objectReference.newyork.showWeather();
+          objectReference.newyork.initMap();
         }
 
         if ($(this).prop("value") == "tokyo") {
           objectReference.tokyo.showWeather();
+          objectReference.tokyo.initMap();
         }
       });
     });
