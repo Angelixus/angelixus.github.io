@@ -79,7 +79,7 @@ class GoogleMapsCreator {
 
   createMapFromLatLong(lat, long) {
     var pos = { lat: parseFloat(lat), lng: parseFloat(long) };
-    var map = new google.maps.Map(document.getElementById("dynamicMap"), {
+    var map = new google.maps.Map(document.getElementById("freeApp"), {
       center: pos,
       zoom: 8
     });
