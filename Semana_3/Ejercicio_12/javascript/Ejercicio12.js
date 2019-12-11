@@ -56,14 +56,36 @@ class GeoLocalizacion {
   }
 
   initMap() {
-    var pos = {lat: this.lat, lng: this.long};
+    var pos = { lat: this.lat, lng: this.long };
     var map = new google.maps.Map(document.getElementById("dynamicMap"), {
       center: pos,
       zoom: 8
     });
 
-    var marker = new google.maps.Marker({position: pos, map: map})
+    var marker = new google.maps.Marker({ position: pos, map: map });
   }
 }
 
 var geolocation = new GeoLocalizacion();
+
+class GoogleMapsCreator {
+  constructor() {
+
+  }
+
+  createMap(idLat, idLong) {
+      this.createMapFromLatLong($(idLat).val(), $(idLong).val())
+  }
+
+  createMapFromLatLong(lat, long) {
+    var pos = { lat: parseFloat(lat), lng: parseFloat(long) };
+    var map = new google.maps.Map(document.getElementById("dynamicMap"), {
+      center: pos,
+      zoom: 8
+    });
+
+    var marker = new google.maps.Marker({ position: pos, map: map });
+  }
+}
+
+var mapCreator = new GoogleMapsCreator();

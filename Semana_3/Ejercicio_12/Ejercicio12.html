@@ -31,6 +31,16 @@
         <h2>Mapa dinámico</h2>
     </section>
 
+    <section id="freeApp">
+        <h2>Mapa dinámico segun input</h2>
+        <p>Introduce la latitud y la longitud en los siguientes input para ver un mapa</p>
+        <label for="latFree">Latitud</label>
+        <input type="text" id="latFree">
+        <label for="longFree">Longitud</label>
+        <input type="text" id="longFree">
+
+        <button type="button" onclick="mapCreator.createMap('#latFree', '#longFree')"></button>
+    </section>
     <script src="javascript/Ejercicio12.js"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7OJDcBX1deML4CVeVh6xgQZX4itIMrOM"
