@@ -56,11 +56,13 @@ class GeoLocalizacion {
   }
 
   initMap() {
-    var objectReference = this;
+    var pos = {lat: this.lat, lng: this.long};
     var map = new google.maps.Map(document.getElementById("dynamicMap"), {
-      center: { lat: objectReference.lat, lng: objectReference.long },
-      zoom: 8
+      center: pos,
+      zoom: 4
     });
+
+    var marker = new google.maps.Marker({position: pos, map: map})
   }
 }
 
