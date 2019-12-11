@@ -38,7 +38,7 @@ var basicCalcPrototype = {
     }
 
     if(areValid) {
-      scientificCalc.memory = eval(scientificCalc.memory + '+' + scientificCalc.expression)
+      scientificCalc.memory = eval(scientificCalc.memory + '+' + scientificCalc.expression).toString()
       scientificCalc.expression = scientificCalc.memory.toString();
     }
     this.showValueOnInput("numberShow", scientificCalc.expression);
@@ -168,7 +168,7 @@ scientificCalc.deleteLast = function() {
 
 scientificCalc.sin = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = Math.sin(scientificCalc.expression)
+    scientificCalc.expression = Math.sin(scientificCalc.expression).toString();
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -176,7 +176,7 @@ scientificCalc.sin = function() {
 
 scientificCalc.cos = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = Math.cos(scientificCalc.expression)
+    scientificCalc.expression = Math.cos(scientificCalc.expression).toString();
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -184,7 +184,7 @@ scientificCalc.cos = function() {
 
 scientificCalc.tan = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = Math.tan(scientificCalc.expression)
+    scientificCalc.expression = Math.tan(scientificCalc.expression).toString();
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -192,14 +192,14 @@ scientificCalc.tan = function() {
 
 scientificCalc.sec = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = 1 / Math.cos(scientificCalc.expression)
+    scientificCalc.expression = (1 / Math.cos(scientificCalc.expression)).toString();
   }
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
 
 scientificCalc.cosec = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = 1 / Math.sin(scientificCalc.expression)
+    scientificCalc.expression = (1 / Math.sin(scientificCalc.expression)).toString();
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -207,7 +207,7 @@ scientificCalc.cosec = function() {
 
 scientificCalc.cotan = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
-    scientificCalc.expression = 1 / Math.tan(scientificCalc.expression)
+    scientificCalc.expression = (1 / Math.tan(scientificCalc.expression)).toString();
   }
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
@@ -217,7 +217,7 @@ scientificCalc.ln = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     var num = eval(scientificCalc.expression)
     if(num >= 0) {
-      scientificCalc.expression = Math.log(scientificCalc.expression)
+      scientificCalc.expression = Math.log(scientificCalc.expression).toString()
     } else {
       scientificCalc.expression = ""
     }
@@ -230,7 +230,7 @@ scientificCalc.log = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     var num = eval(scientificCalc.expression)
     if(num >= 0) {
-      scientificCalc.expression = Math.log10(scientificCalc.expression)
+      scientificCalc.expression = Math.log10(scientificCalc.expression).toString();
     } else {
       scientificCalc.expression = ""
     }
@@ -243,7 +243,7 @@ scientificCalc.sqrt = function() {
   if(scientificCalc.stackForBrackets.length == 0 && scientificCalc.matchExpression.test(scientificCalc.expression)) {
     var num = eval(scientificCalc.expression)
     if(num >= 0) {
-      scientificCalc.expression = Math.sqrt(scientificCalc.expression);
+      scientificCalc.expression = Math.sqrt(scientificCalc.expression).toString();
     } else {
       scientificCalc.expression = "";
     }
@@ -267,6 +267,8 @@ scientificCalc.fact = function() {
       scientificCalc.expression = "";
     }
   }
+
+  scientificCalc.expression = scientificCalc.expression.toString();
 
   scientificCalc.showValueOnInput('numberShow', scientificCalc.expression)
 }
