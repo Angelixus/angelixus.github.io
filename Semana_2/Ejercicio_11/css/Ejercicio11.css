@@ -40,3 +40,7 @@ select, img {
     margin-right: auto;
     width: 50%;
 }
+
+#dynamicMap{
+    height: 900px;
+}

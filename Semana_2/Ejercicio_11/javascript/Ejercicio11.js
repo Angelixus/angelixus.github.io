@@ -42,7 +42,19 @@ class WeatherGetter {
         if (selectedName == objectReference.optionName) {
           objectReference.showWeather();
         }
+
+        objectReference.initMap()
       });
+  }
+
+  initMap() {
+    var pos = { lat: this.lat, lng: this.long };
+    var map = new google.maps.Map(document.getElementById("dynamicMap"), {
+      center: pos,
+      zoom: 8
+    });
+
+    var marker = new google.maps.Marker({ position: pos, map: map });
   }
 
   showWeather() {
