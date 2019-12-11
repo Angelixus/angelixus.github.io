@@ -55,8 +55,10 @@ class GeoLocalizacion {
   }
 }
 
+var geolocation = new GeoLocalizacion();
+
 function initMap() {
-    var pos = {lat: this.lat, lng: this.long};
+    var pos = {lat: geolocation.lat, lng: geolocation.long};
     var map = new google.maps.Map(document.getElementById("dynamicMap"), {
       center: pos,
       zoom: 8
@@ -64,5 +66,3 @@ function initMap() {
 
     var marker = new google.maps.Marker({position: pos, map: map})
 }
-
-var geolocation = new GeoLocalizacion();
