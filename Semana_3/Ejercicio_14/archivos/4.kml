@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Rutas</name>
+    <description>Practica de XML, transformacion a KML</description>
+    <Style id="linearoja">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>ff0000ff</color>
+      </PolyStyle>
+    </Style>
+    <Placemark>
+      <name>Relieve absoluto</name>
+      <description>Pared verde transparente con contornos amarillos</description>
+      <styleurl>#linearoja</styleurl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <altitudeMode>absoluto</altitudeMode>
+        <coordinates>
+-4.837056,43.253832,258
+-4.823270,43.238038,617
+-4.819620,43.235395,646
+</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
