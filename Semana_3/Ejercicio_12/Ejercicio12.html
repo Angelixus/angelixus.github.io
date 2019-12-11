@@ -15,7 +15,7 @@
     <header>
       <h1>Geolocalizacion</h1>
     </header>
-    <section id="userLocation">
+    <section class="container" id="userLocation">
       <h2>Latitud y longitud del usuario</h2>
       <p>
         A continuacion se mostraran la latitud y longitud del usuario si estan
@@ -24,23 +24,42 @@
       <p id="latitudeP">Latitud: -</p>
       <p id="longitudeP">longitud: -</p>
     </section>
-    <section id="staticMap">
+    <section class="container" id="staticMap">
       <h2>Mapa estático de la zona</h2>
     </section>
-    <section id="dynamicMap">
+
+    <div class="container">
+      <section>
         <h2>Mapa dinámico</h2>
-    </section>
+      </section>
+      <div id="dynamicMap">
 
-    <section id="freeApp">
+      </div>
+    </div>
+
+    <div class="container">
+      <section>
         <h2>Mapa dinámico segun input</h2>
-        <p>Introduce la latitud y la longitud en los siguientes input para ver un mapa</p>
+        <p>
+          Introduce la latitud y la longitud en los siguientes input para ver un
+          mapa
+        </p>
         <label for="latFree">Latitud</label>
-        <input type="text" id="latFree">
+        <input type="text" id="latFree" />
         <label for="longFree">Longitud</label>
-        <input type="text" id="longFree">
+        <input type="text" id="longFree" />
 
-        <button type="button" onclick="mapCreator.createMap('#latFree', '#longFree')">Crear Mapa</button>
-    </section>
+        <button
+          type="button"
+          onclick="mapCreator.createMap('#latFree', '#longFree')"
+        >
+          Crear Mapa
+        </button>
+      </section>
+
+      <div id="freeApp"></div>
+    </div>
+
     <script src="javascript/Ejercicio12.js"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7OJDcBX1deML4CVeVh6xgQZX4itIMrOM"
